@@ -28,7 +28,8 @@
 </header>
 <div id="headerlow"></div>
 <body onload="document.search_form.search_input.focus();">
-<div id="insert"></div> 
+<div id="insert">
+</div> 
 <div id="main" style="border-right:1px solid red">
 <div id="artmusics">
         <ul>
@@ -67,6 +68,22 @@
 <script  type="text/javascript" >
  var songcount=1;
  var count=1;
+ var flag=0;
+ function lovemusic(){
+  $("a").click( function(){
+       if(flag==0){
+       $(this).children("img").attr("src","kuting/love.ico"); 
+	   $(this).attr("title","ÒÑÏ²»¶");
+	   flag=1;
+	     }
+	  else{
+	     $(this).children("img").attr("src","kuting/dislove.ico"); 
+	     $(this).attr("title","±ê¼ÇÏ²»¶£¿");
+	     flag=0;
+	    }
+         }  
+       ) 
+	   }
  function myrefresh() 
             { 
               window.location.reload(); 
@@ -82,7 +99,7 @@ $(".music_list li").live('click',function(){
 	   }
 	else{
 	
-	var youl = '<div id="song"><p style=" clear:both;float:left">'+songcount+"."+$(this).attr("name")+'</p> &nbsp <embed src="http://www.xiami.com/widget/470304_' + $(this).attr("id") + '/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" volume="30" style="margin-top:13px" wmode="transparent"></embed>'+ '<a href="javascript:del()" onclick="$(this).parent().remove()"> x</a> ' + '</div><br/>';
+	var youl = '<div id="song"><p style=" clear:both;float:left">'+songcount+"."+$(this).attr("name")+'</p> &nbsp <embed src="http://www.xiami.com/widget/470304_' + $(this).attr("id") + '/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" volume="30" style="margin-top:13px" wmode="transparent"></embed>'+ '<a href="javascript:del()" onclick="$(this).parent().remove()" title="É¾³ý"> x</a> ' + '<a title="±êÎªÏ²»¶£¿" href="#" onclick="javascript:lovemusic()" id="songs"><img src="kuting/dislove.ico"/>Ï²»¶</a><br/></div>';
 	songcount++;
 	count++;
 	

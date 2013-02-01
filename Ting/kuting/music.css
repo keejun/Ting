@@ -3,8 +3,8 @@
  color:#5C9CCC;
 }
 #artmusic{
-      margin-left:29%;
-      margin-right:40%;
+      margin-left:9%;
+      margin-right:4%;
       margin-top:6%;
 	  margin-bottom:6%
      /*  background:#A4D3EE; */
@@ -12,7 +12,7 @@
 #biaoti{
 font-size: 25px;
 }
-ul li { 
+ ul li { 
       list-style:none;
       height:30px; 
       float:left;  

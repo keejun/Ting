@@ -36,6 +36,7 @@
 	        var searchtips="<b>音乐Ting搜索:</b> "+$("#search").val();
 		    $("#musictips").html(searchtips);
 	       $.each(data.musics, function(i,item){
+		  
 			$('#info').append((i+1)+".&nbsp"+"<img  src ="+item.image+">");
 			$("#info").append("<br/>");
 			$("#info").append("<b>专辑:</b>"+item.title);
@@ -59,8 +60,8 @@
 			      $("#info").append("<a href='#top' style='float:right;font-size:10px' title='回到顶部'><img src='kuting/top.png' style='width:20px;height:20px'/></a>");
 			     }
 			 }
-
-			$("#info").append("<div><hr/></div>");
+           	$("#info").append("<div><hr/></div>");
+			
 			 });
 		    
 	  },

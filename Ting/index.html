@@ -7,6 +7,7 @@
 <link href="css/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <script src="js/jquery-1.8.3.js"></script>
 <script src="js/jquery-ui-1.9.2.custom.js"></script>
+<script src="js/turn.js"></script>
 <script type="text/javascript" src="appjs/header.js"></script>
 <script type="text/javascript" src="appjs/list.js"></script>
 <script type="text/javascript"src="appjs/chinesedata.js"></script>
@@ -28,6 +29,11 @@
   font-family:Microsoft YaHei;
   padding:4px;
  }
+ $("#info").turn({
+		width: 1000px,
+		height: 2000px,
+		autoCenter: true
+	});
  </script>
 </head>
 <a name="top"></a>
@@ -79,7 +85,10 @@
 </div>
 </div>
 <div id="display">
-<div id="info"></div>
+<div id="info">
+<div id="infos"></div>
+<div id="infoss"></div>
+</div>
 </div>
 <div id="content" style="display:none">对不起，暂无记录！</div>
 <div id="progressbar" class="ui-progressbar-value" style="display:none"></div>
