@@ -23,6 +23,7 @@
 <div id="i"><a href="index.html"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">音乐album</button></a></div>
 <div id="i"><a href="#"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">音乐play</button></a></div>
 <div id="i"><a href="tingfm.html"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台loper</button></a></div>
+<div id="i"><a href="explore.html"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">音乐explore</button></a></div>
 <div id="i"><a href="#"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">音乐集</button></a></div>
 <div id="i"><button id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</button></div>
 </header>
@@ -44,7 +45,7 @@
 		<div class="tabs"></div>
         <div class="panel_wrapper"><br/>
 		<p id="search_zt"></p>
-		<input id="search_input" name="" type="text" title="搜索您喜欢的歌曲或艺术家" value="搜索您喜欢的歌曲或艺术家" onblur="if(!trim(this.value)) this.value = this.title;" onclick="if(this.value == this.title) this.value = '';" onkeypress="search_input_onkeypress(event);" onkeydown="search_bt_onclick();" />
+		<input id="search_input" name="" type="text" title="搜索您喜欢的歌曲或艺术家" value="搜索您喜欢的歌曲或艺术家" onblur="if(!trim(this.value)) this.value = this.title;" onclick="if(this.value == this.title) this.value = '';" onkeypress="search_input_onkeypress(event);" onkeydown="search_bt_onclick();"  x-webkit-speech lang="zh-CN" x-webkit-grammar="bUIltin:search"/>
                     <div id="search_result" align="center">
 					<ul class="music_list" id="music_list"></ul>  <!-- 显示搜索列表 -->
 					<div id="self_set_pager_ui"></div>  <!-- 翻页显示行 -->
