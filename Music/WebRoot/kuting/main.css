@@ -1,0 +1,92 @@
+#headerline{
+ margin:0,0,0,0px;
+ height:4px;
+ background:#B2DFEE
+}
+#header{
+ margin:0,0,0,0px;
+ height:24px;
+ background: #7EC0EE;
+}
+
+#i{
+ display:inline;
+ font-family:Microsoft YaHei;
+ font-size:14px;
+ margin-top:4px
+}
+#right{
+  float:right;
+  font-family:Microsoft YaHei;
+  font-size:12px
+ } 
+ #searchafter{
+  float:right;
+  font-family:Microsoft YaHei;
+  padding:4px ;
+  display:none;
+  }
+body{
+ font-family:Microsoft YaHei;
+  background:#C7EDCC
+
+}
+#headerlow{
+ height:5px;
+ background:#FF7F00
+}
+#list1{
+ margin:1px;
+ float:left;
+ width:200px;
+ background:#EAEAEA
+
+}
+a{
+  TEXT-DECORATION:none;
+
+}
+a:hover{
+  color:#FF7F00;
+  text-decoration: underline;
+ }
+#searchaction{
+ background-image:url("http://mu9.bdstatic.com/player/t/i/d6suQ9Vt.png");
+ width:35px;
+ height:32px;
+}
+#search{
+ width:220px;
+ height:50px;
+ padding:6px;
+ font-family:Microsoft YaHei;
+ font-size:14px;
+ }
+ #aftersearch{
+ width:220px;
+ height:30px;
+ padding:2px;
+ font-family:Microsoft YaHei;
+ font-size:14px;
+ }
+ #topsubmit{
+   font-family:Microsoft YaHei;
+   font-size:14px;
+   margin-top:0px;
+ 
+ }
+ #listheader{
+  background:#79CDCD;
+  width:200px;
+  height:5px;
+  margin:4px,0px,0px,0px;
+ }
+ #dialog{
+   width: 353px; min-height: 82px; height: 397px;
+ 
+ } 
+ #listico{
+  height:20px;
+  width:20px
+ 
+}

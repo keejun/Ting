@@ -1,0 +1,28 @@
+#fmtips{
+ font-size:20px;
+ color:#5C9CCC;
+}
+#artfm{
+      margin-left:30%;
+      margin-right:40%;
+      margin-top:2%;
+	  margin-bottom:6%
+     /*  background:#A4D3EE; */
+}
+#biaoti{
+font-size: 25px;
+font-family: 'Nosifer', cursive;
+}
+ul li { 
+      list-style:none;
+      height:30px; 
+      float:left;  
+      display:inline; 
+	 }
+ #dbfm #xmfm #kgfm {
+  width:98%;margin:20px auto; padding:50px 0; clear:both; overflow:hidden; text-align:center
+} 
+#tabs{
+ background:url("jimmy.jpg");
+
+}
