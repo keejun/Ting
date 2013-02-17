@@ -1,0 +1,60 @@
+#fmtips{
+ font-size:20px;
+ color:#5C9CCC;
+}
+#artmusic{
+      margin-left:9%;
+      margin-right:4%;
+      margin-top:6%;
+	  margin-bottom:6%
+     /*  background:#A4D3EE; */
+}
+#biaoti{
+font-size: 25px;
+}
+ ul li { 
+      list-style:none;
+      height:30px; 
+      float:left;  
+      display:inline; 
+	 }
+	 
+#search_input {	 
+ width:280px;
+ height:26px;
+ padding:6px;
+ font-family:Microsoft YaHei;
+ font-size:14px;
+ }
+
+
+/* œ∫√◊“Ù¿÷ */
+ul,li {list-style:none; margin:0; padding:0;}
+.music_list {width:300px; overflow:hidden;}
+.music_list li {clear:both; width:100%; height:21px; line-height:23px; border-bottom:1px dotted #DFE5E7; overflow:hidden; text-align:left; cursor:pointer}
+
+/* ∑÷“≥ */
+a:link, a:visited {text-decoration:none;}
+.pages {margin-top:10px; margin-left:5px;}
+.pages {zoom:1; overflow:hidden;}
+	.pages ul {height:21px; overflow:hidden;}
+		.pages li {float:left; margin-right:2px; height:21px; line-height:21px; overflow:hidden;}
+			.pages li a {float:left; padding:0 6px; height:19px; line-height:19px; border:1px solid #E3E4DD; font-size:14px; font-family:Verdana; vertical-align:middle; overflow:hidden;}
+			.pages li a, .pages li a:visited {color:#8F8F8F;}
+			.pages li a:hover {text-decoration:none; border-color:#839B1B; color:#FFF; background-color:#839B1B;}
+			.pages .select {background-color:#839B1B;}
+			.pages .select a , .pages .select a:visited {color:#FFF; border:1px solid #839B1B;}
+		.pages .prevpage, .pages .lastpage {width:21px;}
+			.pages .prevpage a, .pages .prevpage a:visited, .pages .nextpage a, .pages .nextpage a:visited, .pages .lastpage a, .pages .lastpage a:visited, .gopage button {background-image:url(../images/bg_pages.gif); background-repeat:no-repeat; background-color:#FFF;}
+			.pages .prevpage a:hover, .pages .nextpage a:hover, .pages .lastpage a:hover {background-color:#839B1B;} 
+			.pages .prevpage a, .pages .prevpage a:visited  {padding:0 0 0 19px; width:0; background-position:7px -26px;}
+				.pages .prevpage a:hover {background-position:-21px -51px}
+			.pages .nextpage a, .pages .nextpage a:visited {padding:0px 14px 0 7px; line-height:21px; font-size:12px; background-position: 47px 6px;}
+				.pages .nextpage a:hover {background-position:19px -19px;}
+			.pages .lastpage a, .pages .lastpage a:visited {padding:0px 0 0 19px; width:0; background-position:6px -58px;}
+				.pages .lastpage a:hover {background-position:-18px -83px;}
+		.pages .gopage {margin-left:3px; margin-right:0; line-height:23px; color:#5A5A5A;}
+			.gopage span, .gopage input, .gopage button {float:left; line-height:23px; overflow:hidden;}
+			.gopage input, .gopage button {margin:0 5px; width:35px; height:19px; line-height:19px; font-size:12px; color:#5A5A5A;}
+			.gopage input {padding-top:2px; height:17px; line-height:17px; border:1px solid #E3E4DD;}
+			.gopage button {margin-right:0; padding:0; height:21px; border:none; color:#5A5A5A; background-position:0 -129px;}
