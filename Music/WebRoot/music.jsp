@@ -83,10 +83,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script  type="text/javascript" >
    var songcount=1;
    var count=1;
-   var flag=0;
+  // var flag=0;
    var musicname=null;
    var musicid=null;
-   
+   var ii=null;
+	var j=1;
  function myrefresh() 
             { 
               window.location.reload(); 
@@ -107,21 +108,23 @@ $(".music_list li").live('click',function(){
 	////
 		 musicname=$(this).attr("name");
 		 musicid=$(this).attr("id");
-		
-		
-    ////lovemusic(musicname,musicid);
-   ////
-    var youl = '<div id="song"><p style=" clear:both;float:left">'+songcount+"."+$(this).attr("name")+'</p> &nbsp <embed src="http://www.xiami.com/widget/470304_' +  $(this).attr("id") + '/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" volume="30" style="margin-top:13px" wmode="transparent"></embed><a title="标为喜欢？" href="javascript:lovemusic(musicname,musicid)"   id="songlove"> <img src="kuting/dislove.ico"/></a> <a href="javascript:del()" onclick="$(this).parent().remove()" title="删除"> x</a><br/></div>';
+	
+    ii="muid"+j;
+    var youl = '<div id="song"><p style=" clear:both;float:left">'+songcount+"."+$(this).attr("name")+'</p> &nbsp <embed src="http://www.xiami.com/widget/470304_' +  $(this).attr("id") + '/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" volume="30" style="margin-top:13px" wmode="transparent"></embed><a title="标为喜欢？" href="javascript:lovemusic(musicname,musicid)"  id="'+ii+'" value="0"> <img src="kuting/dislove.ico"/></a> <a href="javascript:del()" onclick="$(this).parent().remove()" title="删除"> x</a><br/></div>';
 	songcount++;
 	count++;
+	j++;
 	$("#insert").append(youl);
 	}	
 });
              function lovemusic(musicname,musicid){
 			  <% if (session.getAttribute("user")!=null) { %>
-			        if(flag==0){
+			  $("#"+ii).unbind('click');
+			  $("#"+ii).click( function(){
+                  if($(this).val()==0){
 			         $(this).children("img").attr("src","kuting/love.ico"); 
 				     $(this).attr("title","已喜欢");
+				     $(this).val(1);
 				     var name="<%=user.getEmail()%>";
 				     var url="<%=basePath%>addlove";
 				   $.ajax({
@@ -130,16 +133,18 @@ $(".music_list li").live('click',function(){
 			           data:{ "name":name,"musicname":musicname,"musicid":musicid },  
 			           dataType: "text",
 			           success: function(){
-			        	       flag=1;
+			        	     
 			            	   alert("喜欢");
 			            	
 			                    }
 			               });
+				   //$(this).unbind('click');
 				     }
 				  else{
-					     $(this).children("img").attr("src","kuting/love.ico"); 
-					     $(this).attr("title","已喜欢");
-					  var name="<%=user.getEmail()%>";
+					     $(this).children("img").attr("src","kuting/dislove.ico"); 
+					     $(this).attr("title","标为喜欢？");
+					     $(this).val(0);
+					 var name="<%=user.getEmail()%>";
 					 var url="<%=basePath%>deletelove";
 				     $.ajax({
 				           type: "post",
@@ -147,15 +152,19 @@ $(".music_list li").live('click',function(){
 				           data:{ "name":name,"musicid":musicid}, 
 				           dataType: "text",
 				           success: function(){
-				        	       flag=0;
+				        	      
 				            	   alert("删除");
 				            	
 				            	       }
 				            });
+				    // $(this).unbind('click');
 				        }
+                    
+			       });
+			
 			    <% }  else {%> 
-			    $("#songlove").live("click", function(){
-			    	    alert("请先登录您的Ting帐户/");
+			    $("#"+ii).live("click", function(){
+			    	    alert("请先登录您的Ting帐户");
 			    	    window.location.href="signup.jsp";
 			           }
 			        );

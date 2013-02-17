@@ -34,7 +34,7 @@
 	          },
 	   success:function(data){
 	         $("#neterror").html("");
-	        var searchtips="<b>ÒôÀÖTingËÑË÷:</b> "+$("#search").val();
+	        var searchtips="<b>ÒôÀÖAlbumËÑË÷:</b> "+$("#search").val();
 		    $("#musictips").html(searchtips);
 	       $.each(data.musics, function(i,item){
 		  
@@ -117,7 +117,7 @@
 	   complete:function(){$("#load").hide(); $("#progressbar").hide();},
 	   success:function(data){
 	      $("#neterror").html("");
-	     var searchtips="<b>ÒôÀÖTingËÑË÷:</b> "+$("#aftersearch").val();
+	     var searchtips="<b>ÒôÀÖAlbumËÑË÷:</b> "+$("#aftersearch").val();
 		 $("#musictips").html(searchtips);
 		  $("#musictips").show();
 	     $.each(data.musics, function(i,item){
