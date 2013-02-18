@@ -32,7 +32,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="i"><a href="#"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
 <div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
 <div id="i"><a href="group.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
+<% if(user!=null){%>
+<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getEmail()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<%} else {%>
 <div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<%}%>
 <div id="i"><a href="photo.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">photo</button></a></div>
 <div id="i"><button id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</button></div>
 <% if(user==null) { %>

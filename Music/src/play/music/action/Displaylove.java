@@ -23,6 +23,12 @@ public class Displaylove extends HttpServlet {
 			try{
 			     musics = dao.love(name);
 			     request.setAttribute("musics", musics);
+			  /*  for(int j=0;j<musics.size();j++){
+			    	 Music music =(Music)musics.get(j);
+			     	 System.out.println(music.getMusicname());
+			    }*/
+			    request.getRequestDispatcher("collection.jsp").forward(request, response);
+			  
 			  } catch (Exception e) {
 					e.printStackTrace();
 					System.out.println("系統出錯diaplaylove");

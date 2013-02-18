@@ -26,13 +26,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="appjs/yanzhengma.js" ></script>
 <script type="text/javascript" src="appjs/checkaccount.js" ></script>
 <link rel="stylesheet" href="kuting/main.css" />
-<link rel="stylesheet" href="kuting/searchtip.css"/>
+<%--<link rel="stylesheet" href="kuting/searchtip.css"/>--%>
 <link rel="stylesheet" href="kuting/search.css"/>
 <link rel="stylesheet" href="kuting/object.css"/>
 <link rel="stylesheet" href="kuting/collection.css"/>
 <link rel="stylesheet" href="kuting/lore.css"/>
 <link rel="stylesheet" href="kuting/named.css"/>
 <link rel="shortcut icon" type="image/x-ico" href="kuting/favicon.ico" />
+<style type="text/css">
+   #musicdisplay{ margin-left:14% ;}
+</style>
 <title>Ting::发现您喜欢的音乐</title>
 </head>
 <header>
@@ -42,7 +45,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="i"><a href="music.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
 <div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
 <div id="i"><a href="group.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
+<% if(user!=null){%>
+<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getEmail()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<%} else {%>
 <div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<%}%>
 <div id="i"><a href="photo.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">photo</button></a></div>
 <% if(user==null) { %>
 <div id="right"><a href="signup.jsp" class="named">登录</a></div>
@@ -52,10 +59,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </header>
 <div id="headerlow"></div>
 <div id="collection"> 
-<div id="co">Ting collection <sub style="font-size:12px">集中您喜欢的东西</sub></div>
+<div id="co">Ting collection <sub style="font-size:12px">集中您喜欢的音乐</sub></div>
 </div>
-<body onload="createcode()">
 <% if (user==null) {%>
+<body onload="createcode()">
    <div id="loginbox">
    <div id="login">
         <p><b>请先登录</b></p>
@@ -75,6 +82,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div> 
     </div>
   <% } else {%>
-     这里是您的
+   <body>
+    <div id="musicdisplay">
+    <% if(musics.size()==0) {
+          out.print("<b>对不起，你还没有收藏记录</b>");
+          } 
+      else {
+          int i=1;
+          for(int j=0;j<musics.size();j++){
+        	  Music music =(Music)musics.get(j);
+        	  %>
+        	<div id="song<%=i%>" style="float:left"><%=i%>.<embed src="http://www.xiami.com/widget/470304_<%=music.getMusicid()%>/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" volume="30" style="margin-top:13px" wmode="transparent"></embed><a href="#" onclick="$(this).parent().remove()" title="删除"> x</a> &nbsp&nbsp </div>  
+             <% i++;}
+          }%>
+          
   <% } %>
+  </div>
 </body>
+<footer>
+</footer>
+</html>
