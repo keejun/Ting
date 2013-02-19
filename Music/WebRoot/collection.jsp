@@ -1,3 +1,4 @@
+<%@page import="java.net.URLEncoder"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%
@@ -36,7 +37,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <style type="text/css">
    #musicdisplay{ margin-left:14% ;}
 </style>
+<% if(user!=null){ %>
+<title><%=user.getName()%>::发现您喜欢的音乐</title>
+<%} else{%>
 <title>Ting::发现您喜欢的音乐</title>
+<%} %>
 </head>
 <header>
 <div id="headerline"></div>
@@ -46,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
 <div id="i"><a href="group.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
 <% if(user!=null){%>
-<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getEmail()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%} else {%>
 <div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%}%>
@@ -60,6 +65,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="headerlow"></div>
 <div id="collection"> 
 <div id="co">Ting collection <sub style="font-size:12px">集中您喜欢的音乐</sub></div>
+ 
+  <% if(user!=null){
+      String name =request.getParameter("name");
+      String realname =new String(name.getBytes("ISO8859_1"),"utf-8");
+       %>
+      <span style="background:#04B486;color:white"><b><%= realname %>喜欢的音乐</b></span>
+    <%}%>
+    
 </div>
 <% if (user==null) {%>
 <body onload="createcode()">

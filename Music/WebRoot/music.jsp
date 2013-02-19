@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
 <div id="i"><a href="group.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
 <% if(user!=null){%>
-<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getEmail()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%} else {%>
 <div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%}%>
@@ -126,10 +126,8 @@ $(".music_list li").live('click',function(){
 			  $("#"+ii).unbind('click');
 			  $("#"+ii).click( function(){
                   if($(this).val()==0){
-			         $(this).children("img").attr("src","kuting/love.ico"); 
-				     $(this).attr("title","已喜欢");
-				     $(this).val(1);
-				     var name="<%=user.getEmail()%>";
+			        
+				     var name="<%=user.getName()%>";
 				     var url="<%=basePath%>addlove";
 				   $.ajax({
 			           type: "post",
@@ -137,18 +135,17 @@ $(".music_list li").live('click',function(){
 			           data:{ "name":name,"musicname":musicname,"musicid":musicid },  
 			           dataType: "text",
 			           success: function(){
-			        	     
-			            	   alert("喜欢");
-			            	
-			                    }
+			        	      // alert("喜欢");
+			            	  }
 			               });
+				   $(this).children("img").attr("src","kuting/love.ico"); 
+			       $(this).attr("title","已喜欢");
+			       $(this).val(1);
 				   //$(this).unbind('click');
 				     }
 				  else{
-					     $(this).children("img").attr("src","kuting/dislove.ico"); 
-					     $(this).attr("title","标为喜欢？");
-					     $(this).val(0);
-					 var name="<%=user.getEmail()%>";
+					    
+					 var name="<%=user.getName()%>";
 					 var url="<%=basePath%>deletelove";
 				     $.ajax({
 				           type: "post",
@@ -156,11 +153,12 @@ $(".music_list li").live('click',function(){
 				           data:{ "name":name,"musicid":musicid}, 
 				           dataType: "text",
 				           success: function(){
-				        	      
-				            	   alert("删除");
-				            	
-				            	       }
+				        	     // alert("删除");
+				               }
 				            });
+				     $(this).children("img").attr("src","kuting/dislove.ico"); 
+				     $(this).attr("title","标为喜欢？");
+				     $(this).val(0);
 				    // $(this).unbind('click');
 				        }
                     

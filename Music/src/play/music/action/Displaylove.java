@@ -2,6 +2,7 @@ package play.music.action;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.net.URLDecoder;
 import javax.servlet.http.HttpSession;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +18,7 @@ public class Displaylove extends HttpServlet {
 			throws ServletException, IOException{
 			request.setCharacterEncoding("utf-8");
 			response.setContentType("text/html"); 
-			String name=request.getParameter("name");//实际为邮箱
+			String name=new String(request.getParameter("name").getBytes("iso8859_1"),"utf-8");
 			Musicdao dao =new  Musicdaoimpl();
 			List<Music> musics = new ArrayList<Music>();
 			try{

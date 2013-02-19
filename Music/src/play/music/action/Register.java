@@ -24,10 +24,12 @@ public class Register  extends HttpServlet {
 		HttpSession session = request.getSession();
 	    Userdao dao =new Userdaoimpl();
 	    User user=new User();
+	    User user2=new User();
 	    try{
 	         user =dao.find(email);
-	     	  if(user.getEmail()==null&&name!=null) {
-		    	   User user1 =new User();
+	         user2=dao.findname(name);
+	     	  if(user.getEmail()==null&&user2.getName()==null&&name!=null&&email!=null) {
+		    	   User user1 =new User(); 
 		    	   user1.setEmail(email);
 		    	   user1.setName(name);
 		    	   user1.setPassword(password);
@@ -37,12 +39,16 @@ public class Register  extends HttpServlet {
 				   response.sendRedirect("index.jsp"); 
 				   return;
 				 }
-	         else if(user !=null&&user.getEmail().equals(email)){
+	     	  else if(user2.getName()==null&&user.getEmail().equals(email)){ 
 	    	  String errormsg ="邮箱已被注册！请换个邮箱试试！";
 	    	  session.setAttribute("errorlogin",errormsg);
-	    	  response.sendRedirect("signup.jsp");
-	    	 
+	    	  response.sendRedirect("signup.jsp#register");
 	    	  } 
+	     	  else if(user.getEmail()==null&&user2.getName().equals(name)){ 
+		    	  String errormsg ="昵称已被注册！请换个昵称试试！";
+		    	  session.setAttribute("errorlogin",errormsg);
+		    	  response.sendRedirect("signup.jsp#register");
+		    	  }  
 	    
 	    	
 	    }  catch (Exception e) {

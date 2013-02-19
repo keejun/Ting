@@ -5,6 +5,6 @@ public interface  Userdao {
   User find(String email) throws Exception;
   void add(User user) throws Exception;
   User findpassword(String email) throws Exception;
-  
+ User findname(String name)throws Exception;
   
 }

@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import org.junit.Test;
 public class Userdaoimpl implements Userdao {
 	public User find(String email) {
@@ -30,6 +29,30 @@ public class Userdaoimpl implements Userdao {
 				Dbunit.closeConn(conn);
 			}
 		    return user;
+	}
+	public User findname(String name) {
+		User user =new User();
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			
+			conn = Dbunit.getConn();
+			stmt = conn.prepareStatement("select * from imuser where name=?");
+			stmt.setString(1, name);
+			rs = stmt.executeQuery();
+			while(rs!=null&&rs.next()) {
+				
+				user.setEmail(rs.getString("email"));
+				user.setName(rs.getString("name"));
+				user.setPassword(rs.getString("password"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			Dbunit.closeConn(conn);
+		}
+		return user;
 	}
 
 	public void add(User user)  {
