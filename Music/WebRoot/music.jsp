@@ -17,12 +17,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript"src="appjs/chinesedata.js" charset="gb2312"></script>
 <script type="text/javascript"src="appjs/music.js" charset="utf-8"></script>
 <script type="text/javascript" src="appjs/musicsearch.js" ></script>
+<script type="text/javascript" src="js/jquery.fbmodel.js" ></script>
 <link rel="stylesheet" href="kuting/main.css" />
 <link rel="stylesheet" href="kuting/music.css" />
 <link rel="stylesheet" href="kuting/musica.css" />
 <link rel="stylesheet" href="kuting/musicd.css" />
 <link rel="stylesheet" href="kuting/search.css"/>
 <link rel="stylesheet" href="kuting/named.css"/>
+<link rel="stylesheet" href="kuting/fbmodal.css"/>
 <title>Ting::发现您喜欢的音乐</title>
 </head>
 <header>
@@ -166,8 +168,23 @@ $(".music_list li").live('click',function(){
 			
 			    <% }  else {%> 
 			    $("#"+ii).live("click", function(){
-			    	    alert("请先登录您的Ting帐户");
-			    	    window.location.href="signup.jsp";
+			    	 $("#msg").fbmodal({
+				            title: "请您先登录Ting",  
+				           cancel: "收藏须登录",
+				             okay: "切换登录ing",
+				       okaybutton: true,
+				     cancelbutton: true,
+				          buttons: true,
+				          opacity: 0.35,
+				          fadeout: true,
+				     overlayclose: false,
+				         modaltop: "30%",
+				       modalwidth: "250" 
+				        }); 
+			          window.setTimeout(change,3000);
+			              function change(){
+			    	        window.location.href="signup.jsp" ;
+			               }
 			           }
 			        );
 			    <%}%> 

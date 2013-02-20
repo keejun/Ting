@@ -83,7 +83,7 @@ function searchMusicList(Page){
 /*用户搜索状态*/
 function searchMusicLoading(show) {
 	if(show == true) {
-		document.getElementById('search_zt').innerHTML = '音乐搜索 <img src="kuting/load.gif" style="height:10px;width:10px"/>';
+		document.getElementById('search_zt').innerHTML = '音乐搜索 <img src="kuting/load.gif" style="height:10px;width:60px"/>';
 	} else {
 		document.getElementById('search_zt').innerHTML = '音乐搜索';
 	}

@@ -28,7 +28,7 @@ public class Addlove extends HttpServlet {
 		    	music1.setName(name);
 		    	music1.setMusicname(musicname);
 		    	dao.addlove(music1);
-		        System.out.println(musicname+"添加成功");
+		        //System.out.println(musicname+"添加成功");
 		    }
 		    else if(music!=null&&music.getMusicid().equals(musicid)&&music.getName().equals(name)){
 		    	  String added ="已在您的收藏中";

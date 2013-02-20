@@ -21,7 +21,7 @@
 	 $( "#progressbar" ).progressbar({
 			value: 100
 		});
-	 $("#progressbar").show();
+	 $("#progressbar").fadeIn();
      $.ajax({
 	   url:url,
 	   context:this,

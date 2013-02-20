@@ -20,6 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="css/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <script src="js/jquery-1.8.3.js"></script>
 <script src="js/jquery-ui-1.9.2.custom.js"></script>
+<script src="js/quickpager.jquery.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="appjs/header.js" charset="gb2312"></script>
 <script type="text/javascript" src="appjs/list.js" charset="gb2312"></script>
@@ -27,15 +28,78 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="appjs/yanzhengma.js" ></script>
 <script type="text/javascript" src="appjs/checkaccount.js" ></script>
 <link rel="stylesheet" href="kuting/main.css" />
-<%--<link rel="stylesheet" href="kuting/searchtip.css"/>--%>
-<link rel="stylesheet" href="kuting/search.css"/>
 <link rel="stylesheet" href="kuting/object.css"/>
 <link rel="stylesheet" href="kuting/collection.css"/>
 <link rel="stylesheet" href="kuting/lore.css"/>
 <link rel="stylesheet" href="kuting/named.css"/>
 <link rel="shortcut icon" type="image/x-ico" href="kuting/favicon.ico" />
+<script type="text/javascript">
+/* <![CDATA[ */
+
+$(document).ready(function() {
+	
+	
+	//$("ul.paging").quickPager();
+	
+	
+	$("ul.paging2").quickPager({pagerLocation:"both"});
+});
+
+/* ]]> */
+</script>
 <style type="text/css">
-   #musicdisplay{ margin-left:14% ;}
+   #musicdisplay{ margin-left:24% ;}
+   ul {
+	clear: both;
+    }
+   ul.paging2 li {
+    padding: 10px;
+    background: #83bd63;
+    font-family: georgia;
+    font-size: 24px;
+    color: #fff;
+    line-height: 1;
+    width: 330px;
+    height:40px;
+    margin-bottom: 1px;
+   
+}
+
+ul.red {
+	outline:10px solid red;
+}
+
+ul.simplePagerNav li{
+    display:block;
+    floaT: left;
+    padding: 3px;
+    margin-bottom: 10px;
+    font-family: georgia;
+}
+
+ul.simplePagerNav li a{
+    color: #333;
+    text-decoration: none;
+}
+
+li.currentPage {
+	    background: red;
+        background: #83bd63;	
+}
+
+ul.simplePagerNav li.currentPage a {
+	color: #fff;	
+}
+
+table.pageme {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}  
+
+table.pageme td {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}      
 </style>
 <% if(user!=null){ %>
 <title><%=user.getName()%>::发现您喜欢的音乐</title>
@@ -97,19 +161,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <% } else {%>
    <body>
     <div id="musicdisplay">
+    <ul class="paging2">
     <% if(musics.size()==0) {
-          out.print("<b>对不起，你还没有收藏记录</b>");
+    	  String name =request.getParameter("name");
+          String realname =new String(name.getBytes("ISO8859_1"),"utf-8");
+          out.print("<b>对不起，" +realname+"还没有收藏记录</b>");
           } 
       else {
           int i=1;
           for(int j=0;j<musics.size();j++){
         	  Music music =(Music)musics.get(j);
         	  %>
-        	<div id="song<%=i%>" style="float:left"><%=i%>.<embed src="http://www.xiami.com/widget/470304_<%=music.getMusicid()%>/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" volume="30" style="margin-top:13px" wmode="transparent"></embed><a href="#" onclick="$(this).parent().remove()" title="删除"> x</a> &nbsp&nbsp </div>  
+        	<li><div id="song<%=i%>" style="float:left;"><%=i%>.<embed src="http://www.xiami.com/widget/470304_<%=music.getMusicid()%>/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" volume="30"  wmode="transparent"></embed> &nbsp <a href="#" onclick="$(this).parent().parent().remove()" title="删除"> x</a> &nbsp&nbsp </div></li> 
              <% i++;}
           }%>
           
   <% } %>
+  </ul>
   </div>
 </body>
 <footer>
