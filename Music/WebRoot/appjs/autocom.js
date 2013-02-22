@@ -69,6 +69,7 @@
 	  },
 	  error:function(jqXHR, textStatus, errorThrown){
 	          var netinfo="hoho!您可能未联网?!重新尝试一下<br/>上个网享受音乐吧！";
+	         // $("#neterror").css("color:red");
 	          document.getElementById("neterror").innerHTML=netinfo;
 	        }
 	    
