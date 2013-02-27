@@ -18,12 +18,73 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="appjs/swfobject.js"></script>
 <script src="appjs/fm.js" charset="gb2312"></script>
 <script src="appjs/music.js" charset="gb2312"></script>
+<script src="appjs/activebar2.js"></script>
 <script src="js/jquery-ui-1.9.2.custom.js"></script>
 <link rel="stylesheet" href="kuting/main.css" />
 <link rel="stylesheet" href="kuting/fm.css" />
 <title>Ting::发现您喜欢的音乐</title>
+</head>
+<header>
+<div id="headerline"></div>
+<div id="header">
+<div id="i"><a href="index.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</button></a></div>
+<div id="i"><a href="music.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
+<div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
+<div id="i"><a href="group.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
+<% if(user!=null){%>
+<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<%} else {%>
+<div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<%}%>
+<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">自乐</button></a></div>
+<div id="i"><button id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</button></div>
+</header>
+<div id="headerlow"></div>
+<body>
+<div id="artfm">
+ <ul>
+		     <li>&nbsp <img src="listimage/m6.ico" style="height:60px;width:60px"/></li> 
+		     <li><p id="biaoti"> &nbsp  Ting电台 <sub style="font-size:12px">--音乐radio</sub></p></li> <br/>
+		   </ul>
+
+</div>
+<div id="tabs">
+<div id="tip" style="float:right"></div>
+  <ul>
+    <li><a href="#tabs1">豆瓣电台</a></li>
+    <li><a href="#tabs2">虾米电台</a></li>
+    <li><a href="#tabs3">酷狗电台</a></li>
+  </ul>
+  <div id="tabs1">
+    <div id="dbfm" style="width: 800px; height: 300px;">
+    </div>
+  </div>
+  <div id="tabs2">
+    <div id="xmfm" style="width: 800px; height: 300px;">
+   
+   </div>
+  </div>
+  <div id="tabs3" >
+   <div id="kgfm" style="width: 800px; height: 400px;" > </div>
+  </div>
+</div>
+</body>
+<footer>
+<div id="dialog">
+<p>Ting是一个基于音乐api的音乐搜索web2.0网站</p>
+<p>您可以联系keejunliu@gmail.com</p>
+<p>当前日期：
+ <div id="datepicker" class="datapicker"></div>	
+</p>
+</div>
 <script type="text/javascript">
 $(function() {
+	 $('<div></div>').html('在这里，您可以静静地，听电台.....').activebar({
+             'font': 'serif',
+             'icon': 'kuting/love.ico',  
+              fontSize:'20px',
+              button:'kuting/closebtn.png',
+        });
     $("#tabs" ).tabs();
 	$("#dbfm").load('fm/dbfm.html');
 	$("#tabs a").click(
@@ -71,59 +132,5 @@ $(function () {
         $("#tip").html(browserTip);
     });
 </script>
-</head>
-<header>
-<div id="headerline"></div>
-<div id="header">
-<div id="i"><a href="index.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</button></a></div>
-<div id="i"><a href="music.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
-<div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
-<div id="i"><a href="group.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
-<% if(user!=null){%>
-<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
-<%} else {%>
-<div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
-<%}%>
-<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">听见</button></a></div>
-<div id="i"><button id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</button></div>
-</header>
-<div id="headerlow"></div>
-<body>
-<div id="artfm">
- <ul>
-		     <li>&nbsp <img src="listimage/m6.ico" style="height:60px;width:60px"/></li> 
-		     <li><p id="biaoti"> &nbsp  Ting电台 <sub style="font-size:12px">--音乐radio</sub></p></li> <br/>
-		   </ul>
-
-</div>
-<div id="tabs">
-<div id="tip" style="float:right"></div>
-  <ul>
-    <li><a href="#tabs1">豆瓣电台</a></li>
-    <li><a href="#tabs2">虾米电台</a></li>
-    <li><a href="#tabs3">酷狗电台</a></li>
-  </ul>
-  <div id="tabs1">
-    <div id="dbfm" style="width: 800px; height: 300px;">
-    </div>
-  </div>
-  <div id="tabs2">
-    <div id="xmfm" style="width: 800px; height: 300px;">
-   
-   </div>
-  </div>
-  <div id="tabs3" >
-   <div id="kgfm" style="width: 800px; height: 400px;" > </div>
-  </div>
-</div>
-</body>
-<footer>
-<div id="dialog">
-<p>Ting是一个基于音乐api的音乐搜索web2.0网站</p>
-<p>您可以联系keejunliu@gmail.com</p>
-<p>当前日期：
- <div id="datepicker" class="datapicker"></div>	
-</p>
-</div>
 </footer>
 </html>

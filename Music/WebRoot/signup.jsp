@@ -12,11 +12,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html"/>
 <head> 
 <link type="image/x-ico" rel="shortcut icon" href="listimage/favicon.ico" />
-<script src="js/jquery-1.8.3.js" type="text/javascript"></script>
 <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
 <link href="css/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <script src="js/jquery-1.8.3.js"></script>
 <script src="js/jquery-ui-1.9.2.custom.js"></script>
+<script src="js/mailsuggest.js"></script>
 <script type="text/javascript" src="appjs/checkaccount.js" ></script>
 <script type="text/javascript" src="appjs/yanzhengma.js" ></script>
 <script type="text/javascript" src="appjs/yanzhengma1.js" ></script>
@@ -33,7 +33,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript">
 $(function() {
     $("#tabs" ).tabs();
-  })
+  });
+</script>
+<script type="text/javascript">
+
+window.onload = function(){				
+	var Suggest = new InputSuggest({
+		input: document.getElementById('loemail'),
+		data: ['sina.cn','sina.com','vip.sina.com.cn','qq.com','163.com']
+	});
+	var Suggest1 = new InputSuggest({
+		width: 300,
+		opacity: 0.9,
+		input: document.getElementById('loemail1'),
+		data: ['sohu.com','sogou.com','chinaren.com','vip.sohu.com','sohu.net','qq.com','sms.sohu.com']
+	});	
+} 
 </script>
 <script>
 #i{
@@ -44,6 +59,20 @@ $(function() {
   font-family:Microsoft YaHei;
   padding:4px;
  }
+.suggest-container {
+    border: 1px solid #C1C1C1;
+    visibility: hidden;
+    background: #FFFFFF;
+}
+
+.suggest-item, .suggest-active {
+    padding: 5px;
+}
+
+.suggest-active {
+    background: #222;
+    color: white;
+} 
 </script>
 </head>
 <header>
@@ -58,7 +87,7 @@ $(function() {
 <%} else {%>
 <div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%}%>
-<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">听见</button></a></div>
+<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">自乐</button></a></div>
 <% if(user==null) { %>
 <div id="right"><a href="signup.jsp" class="named">Ting帐户</a></div>
 <% }  else { %>
@@ -78,8 +107,8 @@ $(function() {
      <% if (session.getAttribute("user")==null) { %>
      <div id="login">
         <form action="login" method="post" name="login" onsubmit="return checklogin(login)">
-         <input type="email" name="email" placeholder="邮箱帐号" id="loginemail" autocomplete="off" title="登录帐号" class="ui-autocomplete-input"><br/><hr/>
-         <input type="password" name="password" placeholder="密码" id="loginemail" autocomplete="off" title="密码" class="ui-autocomplete-input">  <br/><hr/>
+         <input type="email" name="email" placeholder="帐户" id="loemail" autocomplete="on" title="登录帐号" class="ui-autocomplete-input"/><br/><hr/>
+         <input type="password" name="password" placeholder="密码" id="loginemail" autocomplete="off" title="密码" class="ui-autocomplete-input"/>  <br/><hr/>
          <span  id="yanzhengma1" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" style="width:25%; height:4%; background:#e5ebe4"></span>
          <input type="text" name="yanzheng1" placeholder="输入验证码" title="输入验证码" autocomplete="off" class="ui-autocomplete-input" style="width:22%"/><br/>
          <input type="submit" name="submit" id="loginaction" value="登录"/>
@@ -94,10 +123,10 @@ $(function() {
          <% if(user!=null) {%>
           <span>您又想来一注册?!</span><%} %>
         <form action="register" method="post" name="regi"onsubmit="return checkregi(regi)">
-         <input type="text" name="nickname" class="loginna" placeholder="昵称" id="loginemail" autocomplete="off" title="您的昵称" class="ui-autocomplete-input"> <br/> <hr/>
-         <input type="email" name="email" placeholder="邮箱帐号" id="loginemail" autocomplete="off" title="登录帐号" class="ui-autocomplete-input"> <br/> <hr/>
-         <input type="password" name="password" placeholder="密码" id="loginemail" autocomplete="off" title="密码" class="ui-autocomplete-input"> <br/><hr/>
-         <input type="password" name="password1" placeholder="确认密码" id="loginemail" autocomplete="off" title="确认密码" class="ui-autocomplete-input">  <br/><hr/>
+         <input type="text" name="nickname" class="loginna" placeholder="昵称" id="loginemail" autocomplete="off" title="您的昵称" class="ui-autocomplete-input"/> <br/> <hr/>
+         <input type="email" name="email" id="loemail1" placeholder="帐户" autocomplete="on" title="登录帐号" class="ui-autocomplete-input"/> <br/> <hr/>
+         <input type="password" name="password" placeholder="密码" id="loginemail" autocomplete="off" title="密码" class="ui-autocomplete-input"/> <br/><hr/>
+         <input type="password" name="password1" placeholder="确认密码" id="loginemail" autocomplete="off" title="确认密码" class="ui-autocomplete-input"/>  <br/><hr/>
          <span  id="yanzhengma" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" style="width:25%; height:4%; background:#e5ebe4"></span>
          <input type="text" name="yanzheng" placeholder="输入验证码" title="输入验证码" autocomplete="off" class="ui-autocomplete-input" style="width:22%"/><br/>
          <input type="submit" name="submit" id="loginaction" value="注册"/>

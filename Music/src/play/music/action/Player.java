@@ -18,22 +18,18 @@ public class Player extends HttpServlet {
 			response.setContentType("text/html"); 
 			HttpSession session = request.getSession();
 			//String dirPath=request.getParameter("dir");
-			  String dirPath="e:\\m\\";
+			 String dirPath="e:\\m\\";
 		     List<String> fileTypes =new ArrayList<String>();
-		     List<String> filePathList0 = new ArrayList<String>();  
+		    // List<String> filePathList = new ArrayList<String>();  
 		    String a="mp3";
             String b="wma";
 		    fileTypes.add(a);
 		    fileTypes.add(b);
 			try{
 				 Player player=new Player();
-			     filePathList0=player.getAllFilePathByDir_FilterByFileType(dirPath, fileTypes);
-			     session.setAttribute("files",filePathList0);
-	             System.out.println("出来11");
-	             System.out.println(filePathList0.size());
-	             for(int j=0;j<filePathList0.size();j++){
-	            	 System.out.print(filePathList0.get(j));
-	             }
+				// filePathList=player.getAllFilePathByDir_FilterByFileType(dirPath, fileTypes);
+			     session.setAttribute("files", player.getAllFilePathByDir_FilterByFileType(dirPath, fileTypes));
+
 	             request.getRequestDispatcher("player.jsp").forward(request, response);
 			 
 			  } catch (Exception e) {
@@ -114,8 +110,8 @@ public class Player extends HttpServlet {
   
         return fileList;  
     }
-    @Test
-     public void test(){
+    // @Test
+   /*  public void test(){
     	Player player =new Player();
     	String dirPath ="e:\\m";
     	String a="mp3";
@@ -129,6 +125,6 @@ public class Player extends HttpServlet {
         //System.out.println(filePathList);
         
     	
-    }
+    }*/
     
 }

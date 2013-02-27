@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="css/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <script src="js/jquery-1.8.3.js"></script>
 <script src="js/jquery-ui-1.9.2.custom.js"></script>
-<script src="js/turn.js"></script>
+<script src="js/jquery.jrumble.1.3.min.js"></script>
 <script type="text/javascript" src="appjs/header.js" ></script>
 <script type="text/javascript" src="appjs/list.js" charset="gb2312"></script>
 <script type="text/javascript"src="appjs/chinesedata.js" charset="gb2312"></script>
@@ -34,6 +34,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   font-family:Microsoft YaHei;
   padding:4px;
  }
+hr{
+	border:none;
+	border-top:1px solid red;
+	height:0;
+}
  </script>
 </head>
 <header>
@@ -48,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <%} else {%>
 <div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%}%>
-<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">听见</button></a></div>
+<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">自乐</button></a></div>
 <div id="i"><button id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</button></div>
 <% if(user==null) { %>
 <div id="right"><a href="signup.jsp" class="named">Ting帐户</a></div>
@@ -62,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 </header>
 <div id="headerlow"></div>
-<body>
+<body onload="showSuccessToast()">
 <span id="error2" style="display:none">--请您输入搜索条件--</span>
 <span id="neterror"></span>
 <span id="musictips"></span>
@@ -86,9 +91,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 </div>
 <div id="display">
-<div id="info">
+<div id="info"  style="background:#FFE7BA" >
 <div id="infos"></div>
-<div id="infoss"></div>
 </div>
 </div>
 <div id="content" style="display:none">对不起，暂无记录！</div>
@@ -103,6 +107,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <div id="datepicker" class="datapicker"></div>	
 </p>
 </div>
+<script type="text/javascript">
+$("#submit").jrumble({
+	x: 3,
+	y: 0,
+	rotation:2
+	});
+$("#submit").hover(function(){
+	$(this).trigger('startRumble');
+	}, function(){
+	$(this).trigger('stopRumble');
+	});	
+</script>
 </footer>
 </body>
 </html>

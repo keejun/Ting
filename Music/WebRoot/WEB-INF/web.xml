@@ -49,14 +49,6 @@
     <servlet-name>Findpassword</servlet-name>
     <url-pattern>/findpassword</url-pattern>
   </servlet-mapping>
-   <servlet>
-    <servlet-name>myplayer</servlet-name>
-    <servlet-class>play.music.action.Player</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>myplayer</servlet-name>
-    <url-pattern>/myplayer</url-pattern>
-  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>

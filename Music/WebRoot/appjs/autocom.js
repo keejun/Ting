@@ -21,7 +21,7 @@
 	 $( "#progressbar" ).progressbar({
 			value: 100
 		});
-	 $("#progressbar").fadeIn();
+	 $("#progressbar").show();
      $.ajax({
 	   url:url,
 	   context:this,
@@ -34,36 +34,34 @@
 	          },
 	   success:function(data){
 	         $("#neterror").html("");
-	        var searchtips="<b>音乐Album搜索:</b> "+$("#search").val();
+	        var searchtips=" <span style='background:#63B8FF;color:white'><b>音乐Album搜索:</b> "+$("#search").val()+"</span>";
 		    $("#musictips").html(searchtips);
 	       $.each(data.musics, function(i,item){
-		  
-			$('#info').append((i+1)+".&nbsp"+"<img  src ="+item.image+">");
-			$("#info").append("<br/>");
-			$("#info").append("<b>专辑:</b>"+item.title);
-			$("#info").append("<br/>");
-			$("#info").append("<b>音乐基因:</b>");
+			$('#infos').append((i+1)+".&nbsp"+"<img  src ="+item.image+">");
+			$("#infos").append("<br/>");
+			$("#infos").append("<b>专辑:</b>"+item.title);
+			$("#infos").append("<br/>");
+			$("#infos").append("<b>音乐基因:</b>");
 		    for(var j=0;j<item.tags.length;j++){
-		    $("#info").append(" ["+item.tags[j].name+"] ");
+		    $("#infos").append(" ["+item.tags[j].name+"] ");
 			 }
-			$("#info").append("<br/>");
-			$("#info").append("<b>发行时间:</b>"+item.attrs.pubdate);
-			$("#info").append("<br/>");
-			$("#info").append("<b>评分:</b>"+item.rating.average+",基于豆瓣网"+item.rating.numRaters+"人投票");
-		    $("#info").append("<br/>");
-		 	$("#info").append("<b>歌手:</b>"+item.attrs.singer); 
-			$("#info").append("<br/>");
-			$("#info").append("<b>专辑歌曲:</b>"+item.attrs.tracks);
-			$("#info").append("<br/>");
-			$("#info").append("<b>唱片公司:</b>"+item.attrs.publisher); 
+			$("#infos").append("<br/>");
+			$("#infos").append("<b>发行时间:</b>"+item.attrs.pubdate);
+			$("#infos").append("<br/>");
+			$("#infos").append("<b>评分:</b>"+item.rating.average+",基于豆瓣网"+item.rating.numRaters+"人投票");
+		    $("#infos").append("<br/>");
+		 	$("#infos").append("<b>歌手:</b>"+item.attrs.singer); 
+			$("#infos").append("<br/>");
+			$("#infos").append("<b>专辑歌曲:</b>"+item.attrs.tracks);
+			$("#infos").append("<br/>");
+			$("#infos").append("<b>唱片公司:</b>"+item.attrs.publisher); 
 			 if ( i>4 ){
 			    if(i%2!=0){
-			      $("#info").append("<a href='#top' style='float:right;font-size:10px' title='回到顶部'><img src='kuting/top.png' style='width:20px;height:20px'/></a>");
+			      $("#infos").append("<a href='#top' style='float:right;font-size:10px' title='回到顶部'><img src='kuting/top.png' style='width:20px;height:20px'/></a>");
 			     }
 			 }
-           	$("#info").append("<div><hr/></div>");
-			
-			
+           	$("#infos").append("<div><hr/></div>");
+        
 			 });
 		    
 	  },
@@ -105,7 +103,7 @@
 	 var loadtxt="正在努力为您检索中........";
 	 document.getElementById("load").innerHTML=loadtxt;
 	 $("#load").show();
-	  $( "#progressbar" ).progressbar({
+	 $( "#progressbar" ).progressbar({
 			value: 100
 		});
 	 $("#progressbar").show();
@@ -118,7 +116,7 @@
 	   complete:function(){$("#load").hide(); $("#progressbar").hide();},
 	   success:function(data){
 	      $("#neterror").html("");
-	     var searchtips="<b>音乐Album搜索:</b> "+$("#aftersearch").val();
+	      var searchtips=" <span style='background:#63B8FF;color:white'><b>音乐Album搜索:</b> "+$("#search").val()+"</span>";
 		 $("#musictips").html(searchtips);
 		  $("#musictips").show();
 	     $.each(data.musics, function(i,item){

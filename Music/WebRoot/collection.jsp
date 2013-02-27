@@ -15,12 +15,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 <head> 
-<link type="image/x-ico" rel="shortcut icon" href="listimage/favicon.ico" />
+<link type="image/x-ico" rel="icon" href="listimage/favicon.ico" />
 <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
 <link href="css/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <script src="js/jquery-1.8.3.js"></script>
 <script src="js/jquery-ui-1.9.2.custom.js"></script>
 <script src="js/quickpager.jquery.js"></script>
+<script src="js/float.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="appjs/header.js" charset="gb2312"></script>
 <script type="text/javascript" src="appjs/list.js" charset="gb2312"></script>
@@ -34,18 +35,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" href="kuting/named.css"/>
 <link rel="shortcut icon" type="image/x-ico" href="kuting/favicon.ico" />
 <script type="text/javascript">
-/* <![CDATA[ */
-
 $(document).ready(function() {
-	
-	
-	//$("ul.paging").quickPager();
-	
-	
 	$("ul.paging2").quickPager({pagerLocation:"both"});
+	 $('.cloud').each(function() {
+		  $(this).jqFloat({
+			width:Math.floor(Math.random()*10)*10,
+			height:10,
+			speed:Math.floor(Math.random()*10)*100
+		  });
+	   });	
 });
-
-/* ]]> */
+  
 </script>
 <style type="text/css">
    #musicdisplay{ margin-left:24% ;}
@@ -99,7 +99,27 @@ table.pageme {
 table.pageme td {
     border-collapse: collapse;
     border: 1px solid #ccc;
-}      
+}  
+#cloud2{
+	top:14%;
+	left:16%;
+}
+#cloud3{
+	top:65%;
+	right:37%;
+}
+#cloud4{
+	top:70%;
+	right:32%;
+	z-index:5;
+}   
+.cloud{
+	width:104px;
+	height:66px;
+	background:url(kuting/sprite.png) no-repeat 0 0;
+	position:absolute;
+	z-index:10;
+}
 </style>
 <% if(user!=null){ %>
 <title><%=user.getName()%>::发现您喜欢的音乐</title>
@@ -119,7 +139,7 @@ table.pageme td {
 <%} else {%>
 <div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%}%>
-<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">听见</button></a></div>
+<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">自乐</button></a></div>
 <% if(user==null) { %>
 <div id="right"><a href="signup.jsp" class="named">登录</a></div>
 <% }  else { %>
@@ -128,8 +148,7 @@ table.pageme td {
 </header>
 <div id="headerlow"></div>
 <div id="collection"> 
-<div id="co">Ting collection <sub style="font-size:12px">集中您喜欢的音乐</sub></div>
- 
+<div id="co">Ting cloud <sub style="font-size:12px">集中您喜欢的音乐</sub></div>   
   <% if(user!=null){
       String name =request.getParameter("name");
       String realname =new String(name.getBytes("ISO8859_1"),"utf-8");
@@ -160,6 +179,11 @@ table.pageme td {
     </div>
   <% } else {%>
    <body>
+    <div id="sky">
+		<div id="cloud2" class="cloud"></div>
+		<div id="cloud3" class="cloud"></div>
+		<div id="cloud4" class="cloud"></div>
+    </div> 
     <div id="musicdisplay">
     <ul class="paging2">
     <% if(musics.size()==0) {
@@ -179,6 +203,7 @@ table.pageme td {
   <% } %>
   </ul>
   </div>
+ 
 </body>
 <footer>
 </footer>
