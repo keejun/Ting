@@ -28,10 +28,7 @@
   }
 body{
   font-family:Microsoft YaHei;
- /* background:#C7EDCC;*/
-  background:url(../kuting/publish_bg.png);
-
-
+   background:#C7EDCC;
 }
 #headerlow{
  height:5px;

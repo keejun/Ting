@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   %>
 <div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%}%>
-<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">自乐</button></a></div>
+<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</button></a></div>
 </header>
 <div id="headerlow"></div>
 <body>
@@ -70,10 +70,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="cover"></div>
 		<div id="first-box">
 			<p>
-			如您现在的浏览器不支持html5，对不起，请您升级您的浏览器。
-	               关于音频格式：chrome用户请选择aac(mp4/m4a), mp3, ogg, wav, webm，
-			opera11.10+/firefox用户选择ogg, wav, webm。<br />
-			tips:可以多首歌曲一次性添加。
+			 如您现在的浏览器不是很好地支持html5，对不起，升级您的浏览器。<br/>
+	               关于音频格式：<br/>
+	         chrome用户请选择aac(mp4/m4a), mp3, ogg, wav, webm<br/>
+			 opera10+/firefox用户选择ogg, wav, webm。<br />
+			 tips:可以多首歌曲一次性添加。
 			</p>
 			<div>浏览/Browser...</div>
 		</div>

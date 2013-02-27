@@ -18,6 +18,7 @@ body{
 	width:100%;
 	font-family:"微软雅黑";
 	color:#333;
+    background:url(../kuting/publish_bg.png);
 	text-shadow:0 0 20px #ccc;
 	font-size:14px;
 }
@@ -171,7 +172,6 @@ body{
 #song-info h1{
 	text-shadow:0 0 10px #000;
 	display:inline;
-	background:#333;
 	border-radius:20px;
 	-webkit-border-radius:20px;
 	-moz-border-radius:20px;

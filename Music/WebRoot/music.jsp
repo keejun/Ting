@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <%} else {%>
 <div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%}%>
-<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">自乐</button></a></div>
+<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</button></a></div>
 <div id="i"><button id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</button></div>
 <% if(user==null) { %>
 <div id="right"><a href="signup.jsp" class="named">登录</a></div>
@@ -116,7 +116,7 @@ $(".music_list li").live('click',function(){
 		 musicid=$(this).attr("id");
 	
     ii="muid"+j;
-    var youl = '<div id="song"><p style=" clear:both;float:left">'+songcount+"."+$(this).attr("name")+'</p> &nbsp <embed src="http://www.xiami.com/widget/470304_' +  $(this).attr("id") + '/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" volume="30" style="margin-top:13px" wmode="transparent"></embed><a title="标为喜欢？" href="javascript:lovemusic(musicname,musicid)"  id="'+ii+'" value="0"> <img src="kuting/dislove.ico"/></a> <a href="javascript:del()" onclick="$(this).parent().remove()" title="删除"> x</a><br/></div>';
+    var youl = '<div id="song"><p style=" clear:both;float:left ;background:#FF7F00;color:#fff; border-radius:10px;">'+songcount+"."+'</p> &nbsp <embed src="http://www.xiami.com/widget/470304_' +  $(this).attr("id") + '/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" volume="30" style="margin-top:13px" wmode="transparent"></embed><a title="标为喜欢？" href="javascript:lovemusic(musicname,musicid)"  id="'+ii+'" value="0"> <img src="kuting/dislove.ico"/></a> <a href="javascript:del()" onclick="$(this).parent().remove()" title="删除"> x</a><br/></div>';
 	songcount++;
 	count++;
 	j++;

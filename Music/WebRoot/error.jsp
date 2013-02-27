@@ -44,7 +44,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <%} else {%>
 <div id="i"><a href="<%=basePath%>collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%}%>
-<div id="i"><a href="<%=basePath%>player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">自乐</button></a></div>
+<div id="i"><a href="<%=basePath%>player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</button></a></div>
 </header>
 <div id="headerlow"></div>
 <body>
