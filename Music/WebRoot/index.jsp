@@ -15,19 +15,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
 <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
 <link href="css/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet">
-<script src="js/jquery-1.8.3.js"></script>
 <script src="js/jquery-ui-1.9.2.custom.js"></script>
 <script src="js/jquery.jrumble.1.3.min.js"></script>
 <script type="text/javascript" src="appjs/header.js" ></script>
-<script type="text/javascript" src="appjs/list.js" charset="gb2312"></script>
+<script type="text/javascript" src="js/jquery.sticky.js" ></script>
+<script type="text/javascript" src="js/realshadow.js" ></script>
 <script type="text/javascript"src="appjs/chinesedata.js" charset="gb2312"></script>
 <script type="text/javascript"src="appjs/autocom.js" charset="gb2312"></script>
+<script src="js/jquery.scrollUp.min.js" type="text/javascript" charset="gb2312" ></script>
 <link rel="stylesheet" href="kuting/main.css" />
 <link rel="stylesheet" href="kuting/searchtip.css"/>
 <link rel="stylesheet" href="kuting/search.css"/>
 <link rel="stylesheet" href="kuting/object.css"/>
 <link rel="stylesheet" href="kuting/named.css"/>
+<link rel="stylesheet" href="kuting/hr.css"/>
 <title>Ting::发现您喜欢的音乐</title>
+<script>
+$(function () {
+	$.scrollUp();
+	$("#submit").realshadow({
+		pageY: 190
+	});
+});
+</script>
 <script>
 #right{
   float:right;
@@ -42,7 +52,7 @@ hr{
  </script>
 </head>
 <header>
-<div id="headerline"><a name="top"></a></div>
+<div id="headerline"></div>
 <div id="header">
 <div id="i"><a href="index.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</button></a></div>
 <div id="i"><a href="music.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
@@ -67,7 +77,7 @@ hr{
 </div>
 </header>
 <div id="headerlow"></div>
-<body onload="showSuccessToast()">
+<body>
 <span id="error2" style="display:none">--请您输入搜索条件--</span>
 <span id="neterror"></span>
 <span id="musictips"></span>
@@ -119,6 +129,11 @@ $("#submit").hover(function(){
 	$(this).trigger('stopRumble');
 	});	
 </script>
+ <script>
+    $(window).load(function(){
+      $("#searchafter").sticky({ topSpacing:1 });
+    });
+  </script>
 </footer>
 </body>
 </html>

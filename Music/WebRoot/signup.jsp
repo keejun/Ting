@@ -21,7 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="appjs/yanzhengma.js" ></script>
 <script type="text/javascript" src="appjs/yanzhengma1.js" ></script>
 <script type="text/javascript" src="appjs/header.js" ></script>
-<script type="text/javascript" src="appjs/list.js" charset="gb2312"></script>
 <script type="text/javascript"src="appjs/chinesedata.js" charset="gb2312"></script>
 <link rel="stylesheet" href="kuting/main.css" />
 <link rel="stylesheet" href="kuting/searchtip.css"/>

@@ -70,10 +70,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="cover"></div>
 		<div id="first-box">
 			<p>
-			 如您现在的浏览器不是很好地支持html5，对不起，升级您的浏览器。<br/>
+			 如您现在的浏览器不是很好地支持html5，对不起，请升级您的浏览器<br/>
 	               关于音频格式：<br/>
 	         chrome用户请选择aac(mp4/m4a), mp3, ogg, wav, webm<br/>
-			 opera10+/firefox用户选择ogg, wav, webm。<br />
+			 opera10+/firefox用户选择ogg, wav, webm<br />
+			 也可以考虑使用一些基于上述浏览器内核的browser<br />
 			 tips:可以多首歌曲一次性添加。
 			</p>
 			<div>浏览/Browser...</div>

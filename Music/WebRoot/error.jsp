@@ -15,7 +15,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="js/jquery-1.8.3.js"></script>
 <script src="js/jquery-ui-1.9.2.custom.js"></script>
 <script type="text/javascript" src="appjs/header.js" charset="gb2312"></script>
-<script type="text/javascript" src="appjs/list.js" charset="gb2312"></script>
 <script type="text/javascript"src="appjs/chinesedata.js"  charset="gb2312"></script>
 <script type="text/javascript"src="appjs/qdway.js" charset="gb2312"></script>
 <link rel="stylesheet" href="kuting/main.css" />

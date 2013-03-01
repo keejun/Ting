@@ -34,7 +34,7 @@
 	          },
 	   success:function(data){
 	         $("#neterror").html("");
-	        var searchtips=" <span style='background:#63B8FF;color:white'><b>ÒôÀÖAlbumËÑË÷:</b> "+$("#search").val()+"</span>";
+	        var searchtips=" <span style='background:#569720;color:white; border-radius:16px; border: 1px solid #4c881d;'><b>ÒôÀÖAlbumËÑË÷:</b> "+$("#search").val()+"</span>";
 		    $("#musictips").html(searchtips);
 	       $.each(data.musics, function(i,item){
 			$('#infos').append((i+1)+".&nbsp"+"<img  src ="+item.image+">");
@@ -55,12 +55,7 @@
 			$("#infos").append("<b>×¨¼­¸èÇú:</b>"+item.attrs.tracks);
 			$("#infos").append("<br/>");
 			$("#infos").append("<b>³ªÆ¬¹«Ë¾:</b>"+item.attrs.publisher); 
-			 if ( i>4 ){
-			    if(i%2!=0){
-			      $("#infos").append("<a href='#top' style='float:right;font-size:10px' title='»Øµ½¶¥²¿'><img src='kuting/top.png' style='width:20px;height:20px'/></a>");
-			     }
-			 }
-           	$("#infos").append("<div><hr/></div>");
+           	$("#infos").append("<div><hr   class='alt2'  /></div>");
         
 			 });
 		    
@@ -116,7 +111,7 @@
 	   complete:function(){$("#load").hide(); $("#progressbar").hide();},
 	   success:function(data){
 	      $("#neterror").html("");
-	      var searchtips=" <span style='background:#63B8FF;color:white'><b>ÒôÀÖAlbumËÑË÷:</b> "+$("#search").val()+"</span>";
+	      var searchtips=" <span style='background:#569720;color:white;border-radius:16px;border: 1px solid #4c881d;'><b>ÒôÀÖAlbumËÑË÷:</b> "+$("#search").val()+"</span>";
 		 $("#musictips").html(searchtips);
 		  $("#musictips").show();
 	     $.each(data.musics, function(i,item){
@@ -138,12 +133,7 @@
 			$("#info").append("<b>×¨¼­¸èÇú:</b>"+item.attrs.tracks);
 			$("#info").append("<br/>");
 			$("#info").append("<b>³ªÆ¬¹«Ë¾:</b>"+item.attrs.publisher); 
-			 if ( i>4 ){
-			    if(i%2!=0){
-			      $("#info").append("<a href='#top' style='float:right;font-size:10px' title='»Øµ½¶¥²¿'><img src='kuting/top.png' style='width:20px;height:20px'/></a>");
-			     }
-			 }
-			$("#info").append("<div><hr/></div>");
+			$("#info").append("<div><hr  class='alt2' /></div>");
             });
 	  },
 	   error:function(jqXHR, textStatus, errorThrown){

@@ -12,19 +12,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link type="image/x-ico" rel="shortcut icon" href="listimage/favicon.ico" />
 <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
 <link href="css/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet">
-<script src="js/jquery-1.8.3.js"></script>
 <script src="js/jquery-ui-1.9.2.custom.js"></script>
+<script src="js/alice.min.js"></script>
 <script type="text/javascript"src="appjs/chinesedata.js" charset="gb2312"></script>
 <script type="text/javascript"src="appjs/music.js" charset="utf-8"></script>
 <script type="text/javascript" src="appjs/musicsearch.js" ></script>
 <script type="text/javascript" src="js/jquery.fbmodel.js" ></script>
+<script type="text/javascript" src="js/jquery.grumble.min.js" ></script>
 <link rel="stylesheet" href="kuting/main.css" />
 <link rel="stylesheet" href="kuting/music.css" />
 <link rel="stylesheet" href="kuting/musica.css" />
 <link rel="stylesheet" href="kuting/musicd.css" />
 <link rel="stylesheet" href="kuting/search.css"/>
 <link rel="stylesheet" href="kuting/named.css"/>
+<link rel="stylesheet" href="css/grumble.min.css"/>
 <link rel="stylesheet" href="kuting/fbmodal.css"/>
+<script>
+$(function () {
+ var alicejs = alice.init(); 
+ alicejs.cheshire({"perspectiveOrigin": "top","elems": ["rabbit"],"rotate": 45,"overshoot": 0,"duration": "1000ms","timing": "ease-in-out","delay": {"value": "0ms","randomness": "0%"},"iteration": "infinite","direction": "alternate","playstate": "running"});
+ window.setTimeout(changeanimate,5000);
+ function changeanimate(){
+    alicejs.cheshire({"scale": {"from": "100%","to": "0%"},"elems": ["rabbit"],"rotate": -720,"duration": {"value": "2500ms","randomness": "0%"},"timing": "ease","delay": {"value": "0ms","randomness": "0%"},"iteration": "1","direction": "normal","playstate": "running"});
+    window.setTimeout(displays,1000);
+    function displays(){
+    alicejs.cheshire({"rotate": 720,"elems": ["rabbit"],"move": "left","overshoot": "0%","perspectiveOrigin": "center","duration": {"value": "5500ms","randomness": "0%"},"timing": "easeInOutQuart","delay": {"value": "0ms","randomness": "0%"},"iteration": "1","direction": "normal","playstate": "running"});
+ 
+    }
+ }
+});
+
+</script>
 <title>Ting::发现您喜欢的音乐</title>
 </head>
 <header>
@@ -52,6 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="insert">
 </div> 
 <div id="main" style="border-right:1px solid red">
+<div id="rabbit" title="我是听小乐！"  style="float:right"><img src="images/rabbit.png" id="tingxiaole" style="width: 96px;"/></div>
 <div id="artmusics">
         <ul>
 		     <li>&nbsp <img src="listimage/m2.ico" style="height:60px;width:60px"/></li> 
@@ -87,6 +106,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </p>
 </div>
 <script  type="text/javascript" >
+$("#tingxiaole").hover(
+  function(){
+  $("#tingxiaole").grumble(
+		{
+			text: '我是听小乐!陪您一起听音乐', 
+			angle: 180, 
+			distance: 0, 
+			showAfter: 500,
+			type: 'alt-', 
+			hideAfter: 500
+		}
+	);
+  }
+ );
    var songcount=1;
    var count=1;
   // var flag=0;

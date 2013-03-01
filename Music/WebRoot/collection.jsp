@@ -24,7 +24,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="js/float.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="appjs/header.js" charset="gb2312"></script>
-<script type="text/javascript" src="appjs/list.js" charset="gb2312"></script>
 <script type="text/javascript"src="appjs/chinesedata.js" charset="gb2312"></script>
 <script type="text/javascript" src="appjs/yanzhengma.js" ></script>
 <script type="text/javascript" src="appjs/checkaccount.js" ></script>
