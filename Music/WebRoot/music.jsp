@@ -70,7 +70,7 @@ $(function () {
 <div id="insert">
 </div> 
 <div id="main" style="border-right:1px solid red">
-<div id="rabbit" title="我是听小乐！"  style="float:right"><img src="images/rabbit.png" id="tingxiaole" style="width: 96px;"/></div>
+<div id="rabbit" title="我是听小乐！"  style="float:right"><img src="images/rabbit.png" id="tingxiaole" style="width: 106px;"/></div>
 <div id="artmusics">
         <ul>
 		     <li>&nbsp <img src="listimage/m2.ico" style="height:60px;width:60px"/></li> 

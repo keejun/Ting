@@ -88,7 +88,7 @@ hr{
 		     <li><p id="biaoti"> &nbsp  <b>Ting搜索 <sub style="font-size:12px">--音乐Album</sub></b></p></li> <br/>
 		   </ul>
   </div><br/>
-<div id="searchplace">
+ <div id="searchplace">
           <ul>
 		     <li><a href="#">歌手</a> &nbsp &nbsp &nbsp </li> 
 			 <li><a href="#">地区</a> &nbsp &nbsp &nbsp </li>
@@ -99,6 +99,7 @@ hr{
   <button id="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">搜索一下</span></button>
   <span id="error"></span>
 </div>
+<div id="tingfm" style="float:right;display:none"><a href="tingfm.jsp"><img src="images/tingfm.png" title="点我:快速听歌.." style="width:80px;height:100px"/></a></div>
 </div>
 <div id="display">
 <div id="info"  style="background:#FFE7BA" >
@@ -132,6 +133,10 @@ $("#submit").hover(function(){
  <script>
     $(window).load(function(){
       $("#searchafter").sticky({ topSpacing:1 });
+       window.setTimeout(changeme,1000);
+       function changeme(){
+    	 $("#tingfm").fadeIn();  
+       }
     });
   </script>
 </footer>

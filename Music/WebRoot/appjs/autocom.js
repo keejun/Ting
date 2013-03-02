@@ -50,7 +50,7 @@
 			$("#infos").append("<br/>");
 			$("#infos").append("<b>评分:</b>"+item.rating.average+",基于豆瓣网"+item.rating.numRaters+"人投票");
 		    $("#infos").append("<br/>");
-		 	$("#infos").append("<b>歌手:</b>"+item.attrs.singer); 
+		 	$("#infos").append("<b>歌手:</b><a href='http://zh.wikipedia.org/zh-cn/"+item.attrs.singer+"'  target='_blank'>"+item.attrs.singer+"</a>"); 
 			$("#infos").append("<br/>");
 			$("#infos").append("<b>专辑歌曲:</b>"+item.attrs.tracks);
 			$("#infos").append("<br/>");
@@ -115,7 +115,7 @@
 		 $("#musictips").html(searchtips);
 		  $("#musictips").show();
 	     $.each(data.musics, function(i,item){
-           $('#info').append((i+1)+".&nbsp"+"<img  src ="+item.image+">");
+            $('#info').append((i+1)+".&nbsp"+"<img  src ="+item.image+">");
 			$("#info").append("<br/>");
 			$("#info").append("<b>专辑:</b>"+item.title);
 			$("#info").append("<br/>");
@@ -128,7 +128,7 @@
 			$("#info").append("<br/>");
 			$("#info").append("<b>评分:</b>"+item.rating.average+",基于豆瓣网"+item.rating.numRaters+"人投票");
 		    $("#info").append("<br/>");
-		 	$("#info").append("<b>歌手:</b>"+item.attrs.singer); 
+		 	$("#info").append("<b>歌手:</b><a href='http://zh.wikipedia.org/zh-cn/"+item.attrs.singer+"'  target='_blank'>"+item.attrs.singer+"</a>"); 
 			$("#info").append("<br/>");
 			$("#info").append("<b>专辑歌曲:</b>"+item.attrs.tracks);
 			$("#info").append("<br/>");
