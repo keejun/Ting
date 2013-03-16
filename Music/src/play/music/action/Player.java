@@ -1,6 +1,5 @@
 package play.music.action;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,8 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.junit.Test;
 public class Player extends HttpServlet {
+	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
 			request.setCharacterEncoding("utf-8");

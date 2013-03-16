@@ -107,7 +107,7 @@ hr{
 </div>
 </div>
 <div id="content" style="display:none">对不起，暂无记录！</div>
-<div id="progressbar" class="ui-progressbar-value" style="display:none"></div>
+<div id="progressbar" class="ui-progressbar-value" style="display:none;"></div>
 <span id="load" style="left:30%; font-size:40px; position: absolute; top:38%;">
 </span>
 <footer>

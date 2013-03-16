@@ -1,11 +1,9 @@
 package play.music.dao.impl;
 import play.music.entity.Music;
-import play.music.entity.User;
 import play.music.util.Dbunit;
 import play.music.dao.Musicdao;
 import java.util.List;
 import java.util.ArrayList;
-import java.sql.*;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;

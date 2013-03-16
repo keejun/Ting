@@ -9,12 +9,12 @@ import javax.servlet.http.HttpSession;
 import org.junit.Test;
 
 import play.music.dao.impl.Userdaoimpl;
-import play.music.util.*;
 import play.music.dao.*;
 import play.music.entity.User;
 
 public class Login extends HttpServlet {
   
+@Override
 public void service(HttpServletRequest request, HttpServletResponse response)
        throws ServletException, IOException{
 	    request.setCharacterEncoding("utf-8");

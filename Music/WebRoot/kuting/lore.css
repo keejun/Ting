@@ -16,6 +16,7 @@
 	 padding:6px;
 	 font-family:Microsoft YaHei;
 	 font-size:14px;
+	 margin:2px;
 	 }
 #loemail{
 	 width:220px;
@@ -23,6 +24,7 @@
 	 padding:6px;
 	 font-family:Microsoft YaHei;
 	 font-size:14px;
+	 margin:2px;
 	 }	
 #loemail1{
 	 width:220px;
@@ -30,6 +32,7 @@
 	 padding:6px;
 	 font-family:Microsoft YaHei;
 	 font-size:14px;
+	 margin:2px;
 	 }	 	  
 #loginaction{
 	 width:100px;
@@ -37,8 +40,12 @@
 	 padding:6px;
 	 font-family:Microsoft YaHei;
 	 font-size:14px;
-	 margin-left:18%;
-	 margin-top:1%;
+	 margin-left:26%;
+	 margin-top:6px;
+	 border-radius:10px;
+	 background:#B2DFEE;
+	 border:none;
+	 
 }
 #loginbox{
 	 margin-left:26%;

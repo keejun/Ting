@@ -1,0 +1,7 @@
+hr{clear:both;border-bottom:0;border-top:1px dotted #FF7F00;border-right:0px;border-left:0;margin:10px 0;min-height: 0px;height:1px;}
+hr.alt1{border-style: solid;}
+hr.alt2{border-style: dashed;}
+#hrdiv{
+ width:220px;
+ margin-top:4px;
+}

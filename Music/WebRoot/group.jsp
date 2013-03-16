@@ -20,11 +20,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="appjs/header.js" charset="gb2312"></script>
 <script type="text/javascript"src="appjs/chinesedata.js" charset="gb2312"></script>
 <link rel="stylesheet" href="kuting/main.css" />
-<link rel="stylesheet" href="kuting/searchtip.css"/>
-<link rel="stylesheet" href="kuting/search.css"/>
 <link rel="stylesheet" href="kuting/object.css"/>
 <link rel="stylesheet" href="kuting/group.css"/>
 <link rel="stylesheet" href="kuting/named.css"/>
+<link rel="stylesheet" href="kuting/grouper.css" />
+<link rel="stylesheet" href="kuting/topics.css"/>
+<link rel="stylesheet" href="kuting/hrs.css"/>
 <link rel="shortcut icon" type="image/x-ico" href="kuting/favicon.ico" />
 <title>Ting::发现您喜欢的音乐</title>
 </head>
@@ -52,6 +53,65 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="grouper"> 
 <div id="gr">Ting小组<div style="font-size:12px">与您喜欢的音乐话题不期而遇</div></div>
 </div>
-
-
+<div id="placepause"></div>
+ <div id="wapper">
+	<div id="contents">
+		<div id="leftcontents">
+		    <div id="hrdiv" style="width:100%"> <hr class="at2" style="border-top:2px dotted #7CCD7C"> </div>
+			<div id="leftside" class="leftside">
+			        <div class ="keejun_title"><a id="question" href="#">你最喜欢的歌手?</a></div>
+           			<div class="keejun_back">
+           				<span id="scanumber">浏览数:1223</span><span id="replynumber">回复数:58</span>
+              		</div>
+              		<div class ="keejun_time"><span>更新:2013/09/04</span> <span>发起:2013/08/04</span></div>
+              		
+          	</div>
+          	<div id="leftside" class="leftside">
+          			<div class ="keejun_title"><a id="question" href="#">最近上海有什么明星的演出///////////////////////////////////////////////////////////////////?</a></div>
+           			<div class="keejun_back">
+           				<span id="scanumber">浏览数:1223</span><span id="replynumber">回复数:58</span>
+              		</div>
+              		<div class ="keejun_time"><span>更新:2013/09/04</span> <span>发起:2013/08/04</span></div>
+      
+          	</div>
+           <div id="leftside" class="leftside">
+		
+          			<div class ="keejun_title"><a id="question" href="#">你最喜欢的歌手?</a></div>
+           			<div class="keejun_back">
+           				<span id="scanumber">浏览数:1223</span><span id="replynumber">回复数:58</span>
+              		</div>
+              		<div class ="keejun_time"><span>更新:2013/09/04</span> <span>发起:2013/08/04</span></div>	
+          
+          	</div>
+           <div id="leftside" class="leftside">
+				<div class='title_back'>
+          			<div class ="keejun_title"><a id="question" href="#">你最喜欢的歌手?</a></div>
+           			<div class="keejun_back">
+           				<span id="scanumber">浏览数:1223</span><span id="replynumber">回复数:58</span>
+              		</div>
+              		<div class ="keejun_time"><span>更新:2013/09/04</span> <span>发起:2013/08/04</span></div>
+       			</div>
+          	</div>		
+		</div>
+        <div id="rightcontents"> 
+         <ul>
+         <li class="ontitle">&nbsp 我的小组话题</li>
+         <li><a href="/myques"> &nbsp 我发起的话题</a></li>
+         <li><a href="/myreply">&nbsp 我回应的话题</a></li>
+         </ul> 
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+$(".leftside:even").css("background-color","#e5ebe4");
+$(".leftside").mouseenter(function(){
+	  $(this).css("background-color","#FFE7BA");
+	});
+$(".leftside").mouseleave(function(){
+	$(".leftside:even").css("background-color","#e5ebe4");
+	$(".leftside:odd").css("background-color","");
+	});
+})
+</script>
 </body>

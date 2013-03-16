@@ -24,7 +24,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="js/float.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="appjs/header.js" charset="gb2312"></script>
-<script type="text/javascript"src="appjs/chinesedata.js" charset="gb2312"></script>
 <script type="text/javascript" src="appjs/yanzhengma.js" ></script>
 <script type="text/javascript" src="appjs/checkaccount.js" ></script>
 <link rel="stylesheet" href="kuting/main.css" />
@@ -32,6 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" href="kuting/collection.css"/>
 <link rel="stylesheet" href="kuting/lore.css"/>
 <link rel="stylesheet" href="kuting/named.css"/>
+<link rel="stylesheet" href="kuting/hrs.css"/>
 <link rel="shortcut icon" type="image/x-ico" href="kuting/favicon.ico" />
 <script type="text/javascript">
 $(document).ready(function() {
@@ -43,6 +43,7 @@ $(document).ready(function() {
 			speed:Math.floor(Math.random()*10)*100
 		  });
 	   });	
+	 
 });
   
 </script>
@@ -162,11 +163,14 @@ table.pageme td {
    <div id="login">
         <p><b>请先登录</b></p>
         <form action="login" method="post" name="login" onsubmit="return checklogin(login)">
-         <input type="email" name="email" placeholder="邮箱帐号" id="loginemail" autocomplete="off" title="登录帐号" class="ui-autocomplete-input"><br/><hr/>
-         <input type="password" name="password" placeholder="密码" id="loginemail" autocomplete="off" title="密码" class="ui-autocomplete-input">  <br/><hr/>
-         <span  id="yanzhengma" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" style="width:25%; height:4%; background:#e5ebe4"></span>
-         <input type="text" name="yanzheng" placeholder="输入验证码" title="输入验证码" autocomplete="off" class="ui-autocomplete-input" style="width:22%;height:4%"/><br/>
+         <input type="email" name="email" placeholder="邮箱帐号" id="loginemail" autocomplete="off" title="登录帐号" class="ui-autocomplete-input">
+         <div id="hrdiv"></div>
+         <input type="password" name="password" placeholder="密码" id="loginemail" autocomplete="off" title="密码" class="ui-autocomplete-input">
+         <div id="hrdiv"></div>
+         <span  id="yanzhengma" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" style="width:104px; height:4%; background:#e5ebe4"></span>
+         <input type="text" name="yanzheng" placeholder="输入验证码" title="输入验证码" autocomplete="off" class="ui-autocomplete-input" style="width:20%;height:4%"/><br/>
          <input type="submit" name="submit" id="loginaction" value="登录"/>
+         <div id="hrdiv"><hr class='alt2' /></div>
         </form>
          <span id="error1">
          <% if (session.getAttribute("errorlogins")!=null) {%>
@@ -202,7 +206,6 @@ table.pageme td {
   <% } %>
   </ul>
   </div>
- 
 </body>
 <footer>
 </footer>
