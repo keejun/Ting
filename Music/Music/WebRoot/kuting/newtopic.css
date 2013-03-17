@@ -1,0 +1,70 @@
+@CHARSET "UTF-8";
+#newtopic{
+	margin-left:20%;
+	margin-top:10px;
+}
+#grouper{
+ height:70px;
+ background:#e5ebe4;
+ border:0px;
+}
+#gr{
+  font-family: 'Butcherman', cursive;
+  font-size: 25px;
+  margin-left:300px;
+  padding-top:12px;
+  width:60%;
+  clear:both;
+  float:left;
+  line-height:26px
+}
+ul li{
+	width:400px;
+	display:inline;
+	
+}
+
+#question{
+	width:200px;
+	font-family:"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+	font-size:20px;
+}
+#ques{
+	margin-top:6px;
+	width:502px;
+	height:303px;
+    resize:none;
+    font-family:"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+    font-size:18px;
+}
+#ques1{
+	 width:100px;
+	 height:50px;
+	 padding:6px;
+	 font-size:14px;
+	 border-radius:10px;
+	 background:#B2DFEE;
+	 border:none;
+     font-family:"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+}
+#backtogroup{
+	 width:100px;
+	 height:50px;
+	 padding:6px;
+	 font-size:14px;
+	 border-radius:10px;
+	 background:#B2DFEE;
+	 margin-left:300px;
+	 border:none;
+     font-family:"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+}
+#submit{
+	 width:100px;
+	 height:50px;
+	 padding:6px;
+	 font-size:14px;
+	 border-radius:10px;
+	 background:#B2DFEE;
+	 border:none;
+     font-family:"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+}
