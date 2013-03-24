@@ -283,7 +283,7 @@ body{
 	overflow:hidden;
 }
 #know-more:before{
-	content:'More about ';
+	content:'关于';
 	font-size:16px;
 	font-weight:normal;
 }

@@ -24,7 +24,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	#div1{width:700px;height:450px;margin:40px auto;position:relative;}	
 	#div1 li{position:absolute;width:700px;height:450px;left:0;top:0;overflow:hidden;}
    </style>
-<link rel="stylesheet" href="kuting/main.css" />
 <link rel="stylesheet" href="kuting/searchtip.css"/>
 <link rel="stylesheet" href="kuting/search.css"/>
 <link rel="stylesheet" href="kuting/object.css"/>
@@ -37,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="i"><a href="<%=basePath%>index.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</button></a></div>
 <div id="i"><a href="<%=basePath%>music.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
 <div id="i"><a href="<%=basePath%>tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
-<div id="i"><a href="<%=basePath%>group.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
+<div id="i"><a href="<%=basePath%>displaytopic"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
 <% if(user!=null){%>
 <div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%} else {%>

@@ -57,7 +57,7 @@ hr{
 <div id="i"><a href="index.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</button></a></div>
 <div id="i"><a href="music.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
 <div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
-<div id="i"><a href="group.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
+<div id="i"><a href="<%=basePath%>displaytopic"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
 <% if(user!=null){%>
 <div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
 <%} else {%>
@@ -98,6 +98,17 @@ hr{
   <input type="text" name="search" placeholder="搜索您想欣赏的音乐或艺术家" id="search" autocomplete="on" title="搜索音乐或艺术家" />
   <button id="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">搜索一下</span></button>
   <span id="error"></span>
+  <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+	<span class="jiathis_txt">分享到：</span>
+	<a class="jiathis_button_tsina">新浪微博</a>
+	<a class="jiathis_button_renren">人人网</a>
+	<a class="jiathis_button_douban">豆瓣</a>
+	<a class="jiathis_button_kaixin001">开心网</a>
+	<a class="jiathis_button_gmail">Gmail</a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1351688919812642" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 </div>
 <div id="tingfm" style="float:right;display:none"><a href="tingfm.jsp"><img src="images/tingfm.png" title="点我:快速听歌.." style="width:80px;height:100px"/></a></div>
 </div>

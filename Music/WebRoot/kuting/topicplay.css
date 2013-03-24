@@ -1,0 +1,38 @@
+#topicplay{
+	margin-top:2px;
+	margin-left:10%;
+	margin-right:10%;
+	margin-bottom:6px;
+	background:#e5ebe4;
+	padding:16px;
+}
+#backtogroup{
+	 width:80px;
+	 height:20px;
+	 padding:4px;
+	 font-size:14px;
+	 border-radius:10px;
+	 background:#B2DFEE;
+	 margin-left:300px;
+	 margin-bottom:2px;
+	 border:none;
+	 float:right;
+     font-family:"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+}
+#replycontent{
+	margin-top:6px;
+	width:300px;
+	height:160px;
+    resize:none;
+    font-family:"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+    font-size:14px;
+}
+.fatieren{
+	font-size:14px;
+	height:20px;
+	margin-bottom:1px;
+	
+}
+#timereply{
+	font-size:14px;
+}
