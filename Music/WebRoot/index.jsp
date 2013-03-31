@@ -16,7 +16,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
 <link href="css/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <script src="js/jquery-ui-1.9.2.custom.js"></script>
-<script src="js/jquery.jrumble.1.3.min.js"></script>
 <script type="text/javascript" src="appjs/header.js" ></script>
 <script type="text/javascript" src="js/jquery.sticky.js" ></script>
 <script type="text/javascript" src="js/realshadow.js" ></script>
@@ -30,10 +29,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" href="kuting/named.css"/>
 <link rel="stylesheet" href="kuting/hr.css"/>
 <title>Ting::发现您喜欢的音乐</title>
+</head>
 <script>
 $(function () {
 	$.scrollUp();
 	$("#submit").realshadow({
+		pageY: 190
+	});
+	$(":text").realshadow({
 		pageY: 190
 	});
 });
@@ -50,21 +53,20 @@ hr{
 	height:0;
 }
  </script>
-</head>
 <header>
 <div id="headerline"></div>
 <div id="header">
-<div id="i"><a href="index.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</button></a></div>
-<div id="i"><a href="music.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
-<div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
-<div id="i"><a href="<%=basePath%>displaytopic"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
+<div id="i"><a href="index.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</span></a></div>
+<div id="i"><a href="music.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</span></a></div>
+<div id="i"><a href="tingfm.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</span></a></div>
+<div id="i"><a href="<%=basePath%>displaytopic"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</span></a></div>
 <% if(user!=null){%>
-<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</span></a></div>
 <%} else {%>
-<div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="collection.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</span></a></div>
 <%}%>
-<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</button></a></div>
-<div id="i"><button id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</button></div>
+<div id="i"><a href="player.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</span></a></div>
+<div id="i"><span id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</span></div>
 <% if(user==null) { %>
 <div id="right"><a href="signup.jsp" class="named">Ting帐户</a></div>
 <% }  else { %>
@@ -79,7 +81,7 @@ hr{
 <div id="headerlow"></div>
 <body>
 <span id="error2" style="display:none">--请您输入搜索条件--</span>
-<span id="neterror"></span>
+
 <span id="musictips"></span>
 <div id="main">
   <div id="artpic">
@@ -113,14 +115,15 @@ hr{
 <div id="tingfm" style="float:right;display:none"><a href="tingfm.jsp"><img src="images/tingfm.png" title="点我:快速听歌.." style="width:80px;height:100px"/></a></div>
 </div>
 <div id="display">
-<div id="info"  style="background:#FFE7BA" >
+<div id="info"  style="background:rgb(199, 237, 204)" >
 <div id="infos"></div>
 </div>
 </div>
 <div id="content" style="display:none">对不起，暂无记录！</div>
-<div id="progressbar" class="ui-progressbar-value" style="display:none;"></div>
-<span id="load" style="left:30%; font-size:40px; position: absolute; top:38%;">
+<div id="progressbar" style="display:none;"></div>
+<span id="load" style="left:25%; font-size:40px; position: absolute; top:38%;">
 </span>
+<span id="neterror"></span>
 <footer>
 <div id="dialog">
 <p>Ting是一个基于音乐api的音乐搜索web2.0网站</p>
@@ -129,18 +132,6 @@ hr{
  <div id="datepicker" class="datapicker"></div>	
 </p>
 </div>
-<script type="text/javascript">
-$("#submit").jrumble({
-	x: 3,
-	y: 0,
-	rotation:2
-	});
-$("#submit").hover(function(){
-	$(this).trigger('startRumble');
-	}, function(){
-	$(this).trigger('stopRumble');
-	});	
-</script>
  <script>
     $(window).load(function(){
       $("#searchafter").sticky({ topSpacing:1 });

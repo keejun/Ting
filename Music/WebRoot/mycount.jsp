@@ -33,16 +33,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <header>
 <div id="headerline"></div>
 <div id="header">
-<div id="i"><a href="index.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</button></a></div>
-<div id="i"><a href="music.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
-<div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
-<div id="i"><a href="<%=basePath%>displaytopic"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
+<div id="i"><a href="index.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</span></a></div>
+<div id="i"><a href="music.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</span></a></div>
+<div id="i"><a href="tingfm.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</span></a></div>
+<div id="i"><a href="<%=basePath%>displaytopic"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</span></a></div>
 <% if(user!=null){%>
-<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</span></a></div>
 <%} else {%>
-<div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="collection.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</span></a></div>
 <%}%>
-<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</button></a></div>
+<div id="i"><a href="player.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</span></a></div>
+<div id="i"><span id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</span></div>
 </header>
 <div id="headerlow"></div>
 <body>

@@ -130,16 +130,16 @@ table.pageme td {
 <header>
 <div id="headerline"></div>
 <div id="header">
-<div id="i"><a href="index.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</button></a></div>
-<div id="i"><a href="music.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
-<div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
-<div id="i"><a href="<%=basePath%>displaytopic"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
+<div id="i"><a href="index.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</span></a></div>
+<div id="i"><a href="music.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</span></a></div>
+<div id="i"><a href="tingfm.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</span></a></div>
+<div id="i"><a href="<%=basePath%>displaytopic"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</span></a></div>
 <% if(user!=null){%>
-<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</span></a></div>
 <%} else {%>
-<div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="collection.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</span></a></div>
 <%}%>
-<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</button></a></div>
+<div id="i"><a href="player.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</span></a></div>
 <% if(user==null) { %>
 <div id="right"><a href="signup.jsp" class="named">登录</a></div>
 <% }  else { %>
@@ -199,7 +199,7 @@ table.pageme td {
           for(int j=0;j<musics.size();j++){
         	  Music music =(Music)musics.get(j);
         	  %>
-        	<li><div id="song<%=i%>" style="float:left;"><%=i%>.<embed src="http://www.xiami.com/widget/470304_<%=music.getMusicid()%>/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" volume="30"  wmode="transparent"></embed> &nbsp <a href="#" onclick="$(this).parent().parent().remove()" title="删除"> x</a> &nbsp&nbsp </div></li> 
+        	<li><div id="song<%=i%>" style="float:left;"><%=i%>.<embed src="http://img.xiami.com/res/player/widget/singlePlayer.swf?dataUrl=http://data.xiami.com/widget/xml-single/uid/470304/sid/<%=music.getMusicid()%>" type="application/x-shockwave-flash" width="257" height="33" volume="30"  wmode="transparent"></embed> &nbsp <a href="#" onclick="$(this).parent().parent().remove()" title="删除"> x</a> &nbsp&nbsp </div></li> 
              <% i++;}
           }%>
           

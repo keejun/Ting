@@ -48,17 +48,17 @@ $(function () {
 <header>
 <div id="headerline"></div>
 <div id="header">
-<div id="i"><a href="index.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</button></a></div>
-<div id="i"><a href="#"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
-<div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
-<div id="i"><a href="<%=basePath%>displaytopic"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
+<div id="i"><a href="index.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</span></a></div>
+<div id="i"><a href="music.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</span></a></div>
+<div id="i"><a href="tingfm.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</span></a></div>
+<div id="i"><a href="<%=basePath%>displaytopic"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</span></a></div>
 <% if(user!=null){%>
-<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</span></a></div>
 <%} else {%>
-<div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="collection.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</span></a></div>
 <%}%>
-<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</button></a></div>
-<div id="i"><button id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</button></div>
+<div id="i"><a href="player.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</span></a></div>
+<div id="i"><span id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</span></div>
 <% if(user==null) { %>
 <div id="right"><a href="signup.jsp" class="named">登录</a></div>
 <% }  else { %>
@@ -70,10 +70,9 @@ $(function () {
 <div id="insert">
 </div> 
 <div id="main" style="border-right:1px solid red">
-<div id="rabbit" title="我是听小乐！"  style="float:right"><img src="images/rabbit.png" id="tingxiaole" style="width: 106px;"/></div>
 <div id="artmusics">
         <ul>
-		     <li>&nbsp <img src="listimage/m2.ico" style="height:60px;width:60px"/></li> 
+		     <li>&nbsp <img src="images/rabbit.png" style="height:80px;width:100px" title="我是听小乐！" id="rabbit" /></li> <!--listimage/m2.ico-->
 		     <li><p id="biaoti"> &nbsp  Ting搜索 <sub style="font-size:12px">--音乐play</sub></p></li> <br/><br/>
 		   </ul>
 </div>
@@ -106,14 +105,14 @@ $(function () {
 </p>
 </div>
 <script  type="text/javascript" >
-$("#tingxiaole").hover(
+$("#rabbit").hover(
   function(){
-  $("#tingxiaole").grumble(
+  $("#rabbit").grumble(
 		{
 			text: '我是听小乐!陪您一起听音乐', 
 			angle: 180, 
 			distance: 0, 
-			showAfter: 500,
+			showAfter: 400,
 			type: 'alt-', 
 			hideAfter: 500
 		}

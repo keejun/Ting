@@ -81,6 +81,31 @@
     <servlet-name>Addreply</servlet-name>
     <url-pattern>/reply</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <servlet-name>Myreply</servlet-name>
+    <servlet-class>play.music.action.Myreply</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Myreply</servlet-name>
+    <url-pattern>/myreply</url-pattern>
+  </servlet-mapping>
+      <servlet>
+    <servlet-name>Myques</servlet-name>
+    <servlet-class>play.music.action.Myques</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Myques</servlet-name>
+    <url-pattern>/myques</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>Settopicoff</servlet-name>
+    <servlet-class>play.music.action.Settopicoff</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Settopicoff</servlet-name>
+    <url-pattern>/drop</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
@@ -88,4 +113,7 @@
   <error-code>404</error-code>
   <location>/error.jsp</location>
    </error-page>
+  <session-config>
+        <session-timeout>260</session-timeout>
+    </session-config> 
 </web-app>

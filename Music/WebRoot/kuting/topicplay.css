@@ -26,6 +26,10 @@
     resize:none;
     font-family:"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
     font-size:14px;
+  
+}
+textarea{
+	  background:url("replyback.png");
 }
 .fatieren{
 	font-size:14px;

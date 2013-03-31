@@ -146,15 +146,14 @@ public class Topicdaoimpl implements Topicdao {
 	public void settopicoffline(int alid, String pubren) throws Exception {
 		    Connection conn =null;
 		    PreparedStatement stmt =null;
-		    PreparedStatement stmt1 =null;
 		    try{
 		    	 conn =Dbtopic.getConn();
-		    	 stmt=conn.prepareStatement("UPDATE IMQUES SET ISONLINE = 0  WHERE ALID=? and PUBREN=? ");
-		         stmt1=conn.prepareStatement("commit;");
+		    	 stmt=conn.prepareStatement("UPDATE imques SET isonline = 0  WHERE alid=? and pubren=? ");
+		    
 		         stmt.setInt(1,alid);
 		         stmt.setString(2, pubren);
 		         stmt.executeQuery();
-		         stmt1.executeQuery();
+		       
 		         }finally{
 		    	Dbtopic.closeconn(conn);
 		    }
@@ -168,7 +167,7 @@ public class Topicdaoimpl implements Topicdao {
 		ResultSet rs =null;
 		try{
 			conn=Dbtopic.getConn();
-			stmt=conn.prepareStatement("SELECT * FROM IMQUES WHERE IMQUES.PUBREN =? ");
+			stmt=conn.prepareStatement("SELECT * FROM IMQUES WHERE IMQUES.PUBREN =?  and isonline=1");
 			stmt.setString(1, pubren);
 			rs=stmt.executeQuery();
 			while(rs!=null&&rs.next()){
@@ -176,6 +175,7 @@ public class Topicdaoimpl implements Topicdao {
 		    topic.setQues(rs.getString("ques"));
 			topic.setPubtime(rs.getString("pubtime"));
 			topic.setScannumber(rs.getInt("scannumber"));
+			topic.setAlid(rs.getInt("alid"));
 			topics.add(topic);
 			}
 	    	}finally {
@@ -192,11 +192,12 @@ public class Topicdaoimpl implements Topicdao {
 		ResultSet rs =null;
 		try{
 			conn=Dbtopic.getConn();
-			stmt=conn.prepareStatement(" select ques,pubtime,scannumber from imques where imques.alid in (SELECT * FROM IMREPLY WHERE IMREPLY.REPLYREN =? ) ");
+			stmt=conn.prepareStatement(" select alid,ques,pubtime,scannumber from imques where imques.alid in (SELECT alid FROM IMREPLY WHERE IMREPLY.REPLYREN =? ) and isonline=1");
 			stmt.setString(1, replyren);
 			rs=stmt.executeQuery();
 			while(rs!=null&&rs.next()){
-		    Topic topic = new Topic();	
+		    Topic topic = new Topic();
+		    topic.setAlid(rs.getInt("alid"));
 		    topic.setQues(rs.getString("ques"));
 			topic.setPubtime(rs.getString("pubtime"));
 			topic.setScannumber(rs.getInt("scannumber"));

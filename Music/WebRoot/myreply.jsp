@@ -6,7 +6,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <%@page import="play.music.entity.User" %>
 <%@page import="play.music.entity.Topic" %>
 <% User user = (User)session.getAttribute("user"); %>
-<% List<Topic> topics= (List<Topic>)session.getAttribute("displaytopics"); %>
+<% List<Topic> topics= (List<Topic>)session.getAttribute("myreplys"); %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
@@ -41,6 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="i"><a href="collection.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</span></a></div>
 <%}%>
 <div id="i"><a href="player.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</span></a></div>
+<div id="i"><span id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</span></div>
 <% if(user==null) { %>
 <div id="right"><a href="signup.jsp" class="named">登录</a></div>
 <% }  else { %>
@@ -57,15 +58,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="contents">
 		<div id="leftcontents">
 		    <div id="hrdiv" style="width:100%"> <hr class="at2" style="border-top:2px dotted #7CCD7C"> </div>
-		   <% if(topics!=null) {%>
+		   <% if(topics.size()!=0) {%>
 		   <% for (int j=0 ;j<topics.size();j++) {
 			   Topic topic =(Topic)topics.get(j);%>
 			   <div id="leftside" class="leftside">
 			        <div class ="keejun_title"><a id="question" href="topic?id=<%=topic.getAlid()%>"><%=topic.getQues()%></a></div>
            			<div class="keejun_back">
-           				<span id="scanumber">浏览(<%=topic.getScannumber()%>)</span><span id="replynumber">回复(<%=topic.getReplynum()%>)</span>
+           				<span id="scanumber">浏览:<%=topic.getScannumber()%></span>
               		</div>
-              		<div class ="keejun_time"><span>更新:<% if(topic.getReplytime()!=null){ %> <%=topic.getReplytime()%> <%} else {%> <%=topic.getPubtime()%><%}%> </span> <span>发起:<%=topic.getPubtime()%></span></div>   		
+              		<div class ="keejun_time"><span>发起:<%=topic.getPubtime()%></span></div>   		
           	</div>	
            <%}%>
           <% } %>	

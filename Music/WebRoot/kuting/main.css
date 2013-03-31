@@ -8,7 +8,9 @@
  height:24px;
  background: #7EC0EE;
 }
-
+header{
+	height:28px;
+}
 #i{
  display:inline;
  font-family:Microsoft YaHei;
@@ -27,8 +29,9 @@
   display:none;
   }
 body{
-  font-family:Microsoft YaHei;
+   font-family:Microsoft YaHei;
    background:#C7EDCC;
+   margin:0px;
 }
 #headerlow{
  height:5px;
@@ -91,4 +94,10 @@ a:hover{
 .jiathis_style{
 	margin-top:14px;
     
+}
+#neterror{
+	margin-top:18px;
+	margin-left:300px;
+	font-size:24px;
+	background:#7EC0EE;
 }

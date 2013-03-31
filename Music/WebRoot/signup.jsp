@@ -77,16 +77,17 @@ window.onload = function(){
 <header>
 <div id="headerline"><a name="top"></a></div>
 <div id="header">
-<div id="i"><a href="index.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</button></a></div>
-<div id="i"><a href="music.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</button></a></div>
-<div id="i"><a href="tingfm.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</button></a></div>
-<div id="i"><a href="<%=basePath%>displaytopic"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</button></a></div>
+<div id="i"><a href="index.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">专辑</span></a></div>
+<div id="i"><a href="music.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">play</span></a></div>
+<div id="i"><a href="tingfm.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">电台</span></a></div>
+<div id="i"><a href="<%=basePath%>displaytopic"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">小组</span></a></div>
 <% if(user!=null){%>
-<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="<%=basePath%>displaylove?name=<%=user.getName()%>"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</span></a></div>
 <%} else {%>
-<div id="i"><a href="collection.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</button></a></div>
+<div id="i"><a href="collection.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">收藏</span></a></div>
 <%}%>
-<div id="i"><a href="player.jsp"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</button></a></div>
+<div id="i"><a href="player.jsp"><span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">有乐</span></a></div>
+<div id="i"><span id="opener" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text">关于Ting</span></div>
 <% if(user==null) { %>
 <div id="right"><a href="signup.jsp" class="named">Ting帐户</a></div>
 <% }  else { %>
@@ -108,7 +109,7 @@ window.onload = function(){
         <form action="login" method="post" name="login" onsubmit="return checklogin(login)">
          <input type="email" name="email" placeholder="帐户" id="loemail" autocomplete="on" title="登录帐号" class="ui-autocomplete-input"/><br/>
          <input type="password" name="password" placeholder="密码" id="loginemail" autocomplete="off" title="密码" class="ui-autocomplete-input"/>  <br/>
-         <span  id="yanzhengma1" title="更换验证码" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" style="width:25%; height:4%; background:#e5ebe4" onclick="createcode1()"></span>
+         <span  id="yanzhengma1" title="更换验证码" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" style="width:25%; height:4%; background:url('kuting/yanzheng.png') " onclick="createcode1()"></span>
          <input type="text" name="yanzheng1" placeholder="输入验证码" title="输入验证码" autocomplete="off" class="ui-autocomplete-input" style="width:20%"/><br/>
          <input type="submit" name="submit" id="loginaction" value="登录"/>
        </form>
@@ -127,7 +128,7 @@ window.onload = function(){
          <input type="email" name="email" id="loemail1" placeholder="帐户" autocomplete="on" title="登录帐号" class="ui-autocomplete-input"/> <br/> 
          <input type="password" name="password" placeholder="密码" id="loginemail" autocomplete="off" title="密码" class="ui-autocomplete-input"/> <br/>
          <input type="password" name="password1" placeholder="确认密码" id="loginemail" autocomplete="off" title="确认密码" class="ui-autocomplete-input"/> <br/>
-         <span  id="yanzhengma" title="更换验证码" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" style="width:25%; height:4%; background:#e5ebe4" onclick="createcode()"></span>
+         <span  id="yanzhengma" title="更换验证码" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" style="width:25%; height:4%; background:url('kuting/yanzheng.png')" onclick="createcode()"></span>
          <input type="text" name="yanzheng" placeholder="输入验证码" title="输入验证码" autocomplete="off" class="ui-autocomplete-input" style="width:20%"/><br/>
          <input type="submit" name="submit" id="loginaction" value="注册"/>
         </form>

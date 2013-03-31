@@ -19,14 +19,19 @@ public class Addreply extends HttpServlet  {
 			String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 			HttpSession session = request.getSession();
 			Topic topic= (Topic)session.getAttribute("question");
-			User user = (User)session.getAttribute("user");
-		    String replyren = user.getName();
+			User user = (User)session.getAttribute("user");  
 			int  alid = topic.getAlid();
 			String reply = request.getParameter("replyinfo");
 			Topicdao  dao =new Topicdaoimpl();
-		  try{
+		  try{  
+			    if(user!=null){
+			    String replyren = user.getName();	
 				dao.addreply(alid, reply, replyren);
 				response.sendRedirect(basePath+"topic?id="+alid);
+			    }
+			    else{
+			     response.sendRedirect("error.jsp");
+			    }
 		     	}catch(Exception e){
 					e.printStackTrace();
 				    System.out.println("系統出錯addreply");

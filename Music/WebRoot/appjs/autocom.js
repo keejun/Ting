@@ -5,7 +5,7 @@
 	 var search=encodeURIComponent($("#search").val());
 	 ////对输入值判断
 	 if($("#search").val()=="")
-	 {  var data="<br/> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <font color=#FF3030>--请您输入搜索条件--</font>";
+	 {  var data="<br/> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <font color=white>--请您输入搜索条件--</font>";
 	    document.getElementById("error").innerHTML=data;
 		$("#search").focus();
 		$("#neterror").html("");
@@ -19,7 +19,7 @@
 	 var loadtxt="正在努力为您检索中........";
 	 document.getElementById("load").innerHTML=loadtxt;
 	 $( "#progressbar" ).progressbar({
-			value: 100
+			value:100
 		});
 	 $("#progressbar").show();
      $.ajax({
@@ -30,7 +30,6 @@
 	   complete:function(){
 	         $("#load").hide();
 	         $("#progressbar").hide(); 
-		
 	          },
 	   success:function(data){
 	         $("#neterror").html("");
@@ -61,7 +60,7 @@
 		    
 	  },
 	  error:function(jqXHR, textStatus, errorThrown){
-	          var netinfo="hoho!您可能未联网?!重新尝试一下<br/>上个网享受音乐吧！";
+	          var netinfo="hoho!您可能未联网?!重新尝试一下,上个网享受音乐吧！";
 	         // $("#neterror").css("color:red");
 	          document.getElementById("neterror").innerHTML=netinfo;
 	        }
@@ -137,7 +136,7 @@
             });
 	  },
 	   error:function(jqXHR, textStatus, errorThrown){
-	          var netinfo="hoho!您可能未联网?!<br/>上个网享受音乐吧！";
+	          var netinfo="hoho!您可能未联网?!上个网享受音乐吧！";
 	          document.getElementById("neterror").innerHTML=netinfo;
 	        }
 	   }); 

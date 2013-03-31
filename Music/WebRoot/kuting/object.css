@@ -36,5 +36,6 @@ float:left;
  .ui-progressbar .ui-progressbar-value { background-image: url(pbar.gif);}
 #error2{
  margin-left:44%;
- color:red
+ color:white;
+ background:#7EC0EE
 }
